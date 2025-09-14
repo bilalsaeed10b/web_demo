@@ -33,6 +33,37 @@
             background-color: #f8f9fa;
         }
         
+        /* Style the main dropdown menu container */
+        .navbar .dropdown-menu {
+            border-radius: 12px;         /* Rounded corners for a modern look */
+            border: 1px solid #e9ecef;   /* Subtle border */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+            padding: 0.5rem 0;           /* Add some vertical padding */
+            margin-top: 10px !important; /* Push it slightly down from the 'Products' link */
+        }
+
+        /* Style individual dropdown items */
+        .navbar .dropdown-item {
+            padding: 0.6rem 1.2rem;       /* More padding for easier clicking */
+            color: var(--text-dark);               /* Darker text color for readability */
+            transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+        }
+
+        /* Hover effect for dropdown items */
+        .navbar .dropdown-item:hover {
+            background-color: #f8f9fa;   /* Light grey background on hover */
+            color: #089c98;              /* Use your site's teal color for text on hover */
+            border-radius: 6px;          /* Slightly rounded corners on the hovered item */
+        }
+
+        /* Style for the 'active' dropdown item */
+        .navbar .dropdown-item.active,
+        .navbar .dropdown-item:active {
+            background-color: #13c5b9;   /* Your site's primary teal color */
+            color: #fff;                 /* White text for active item */
+            border-radius: 6px;
+        }
+
         /* Custom Buttons */
         .btn-teal {
             background-color: var(--teal-primary);
