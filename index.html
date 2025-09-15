@@ -584,6 +584,16 @@
             margin-bottom: 20px;
         }
 
+        /* CSS to hide the cards */
+        .product-card.hidden {
+            display: none;
+        }
+
+        /* CSS to hide the parent column, allowing the grid to reflow */
+        .hidden {
+            display: none;
+        }
+
         .product-meta {
             display: flex;
             justify-content: space-between;
@@ -1136,33 +1146,6 @@
                         <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
                             <div class="container">
                                 <div class="row my-4 justify-content-center">
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                        <h6 class="text-uppercase fw-bold text-center">Digitizing</h6>
-                                        <ul class="list-unstyled text-center">
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                        <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
-                                        <ul class="list-unstyled text-center">
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-                                        <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
-                                        <ul class="list-unstyled text-center">
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                        </ul>
-                                    </div>
                                     <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
                                         <div class="row">
                                             <div class="col-12 text-center">
@@ -1172,22 +1155,47 @@
                                         <div class="row justify-content-center">
                                             <div class="col-6">
                                                 <ul class="list-unstyled text-center">
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                                    <li><a class="dropdown-item" href="#">Embroidery</a></li>
+                                                    <li><a class="dropdown-item" href="#">Chenille</a></li>
+                                                    <li><a class="dropdown-item" href="#">Leather</a></li>
+                                                    <li><a class="dropdown-item" href="#">PVC</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-6">
                                                 <ul class="list-unstyled text-center">
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                                    <li><a class="dropdown-item" href="#">Woven</a></li>
+                                                    <li><a class="dropdown-item" href="#">PINs</a></li>
+                                                    <li><a class="dropdown-item" href="#">Sublimation</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Digitizing</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item" href="#">Left Chest</a></li>
+                                            <li><a class="dropdown-item" href="#">Cap</a></li>
+                                            <li><a class="dropdown-item" href="#">Jacket Back</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item" href="#">Embroidery</a></li>
+                                            <li><a class="dropdown-item" href="#">Leather</a></li>
+                                            <li><a class="dropdown-item" href="#">PVC</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <!--  Links here -->
+                                        </ul>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1283,8 +1291,9 @@
             <div class="product-tabs mb-4 text-center">
                 <button class="product-tab active" data-filter="all">All Products</button>
                 <button class="product-tab" data-filter="patches">Patches</button>
-                <button class="product-tab" data-filter="vectors">Vectors</button>
+                <button class="product-tab" data-filter="digitizing">Digitizing</button>
                 <button class="product-tab" data-filter="keychains">Keychains</button>
+                <button class="product-tab" data-filter="vectors">Vectors</button>
             </div>
 
             <!-- Product Grid -->
@@ -1298,7 +1307,7 @@
                             <div class="product-badge">Patches</div>
                         </div>
                         <div class="product-info">
-                            <h3>Embroidered Patches</h3>
+                            <h3>Embroidery</h3>
                         </div>
                     </div>
                 </div>
@@ -1310,7 +1319,7 @@
                             <div class="product-badge">Patches</div>
                         </div>
                         <div class="product-info">
-                            <h3>PVC Patches</h3>
+                            <h3>Chenille</h3>
                         </div>
                     </div>
                 </div>
@@ -1322,7 +1331,129 @@
                             <div class="product-badge">Patches</div>
                         </div>
                         <div class="product-info">
-                            <h3>Leather Patches</h3>
+                            <h3>Leather</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <img src="images/patches/2.jpeg" alt="Leather Patch">
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>PVC</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <img src="images/patches/2.jpeg" alt="Leather Patch">
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Woven</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <img src="images/patches/2.jpeg" alt="Leather Patch">
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>PINs</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <img src="images/patches/2.jpeg" alt="Leather Patch">
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Sublimation</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digitizing -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="digitizing all">
+                        <div class="product-img">
+                            <img src="images/patches/0.jpeg" alt="Digitizing">
+                            <div class="product-badge">Digitizing</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Left Chest</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="digitizing all">
+                        <div class="product-img">
+                            <img src="images/patches/0.jpeg" alt="Digitizing">
+                            <div class="product-badge">Digitizing</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Cap</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="digitizing all">
+                        <div class="product-img">
+                            <img src="images/patches/0.jpeg" alt="Digitizing">
+                            <div class="product-badge">Digitizing</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Jacket Back</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keychains -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <img src="images/keychains/0.jpeg" alt="Acrylic Keychain">
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Embroidery</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <img src="images/keychains/3.jpeg" alt="Metal Keychain">
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Leather</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <img src="images/keychains/2.jpeg" alt="Leather Keychain">
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>PVC</h3>
                         </div>
                     </div>
                 </div>
@@ -1364,43 +1495,8 @@
                     </div>
                 </div>
 
-                <!-- Keychains -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product-card" data-category="keychains all">
-                        <div class="product-img">
-                            <img src="images/keychains/0.jpeg" alt="Acrylic Keychain">
-                            <div class="product-badge">Keychains</div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Acrylic Keychains</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product-card" data-category="keychains all">
-                        <div class="product-img">
-                            <img src="images/keychains/3.jpeg" alt="Metal Keychain">
-                            <div class="product-badge">Keychains</div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Metal Keychains</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="product-card" data-category="keychains all">
-                        <div class="product-img">
-                            <img src="images/keychains/2.jpeg" alt="Leather Keychain">
-                            <div class="product-badge">Keychains</div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Leather Keychains</h3>
-                        </div>
-                    </div>
-                </div>
-
+                
+                
             </div>
         </div>
     </section>
@@ -1771,10 +1867,32 @@
 
         // Tab functionality
         const tabs = document.querySelectorAll('.product-tab');
+        const productCards = document.querySelectorAll('.product-card');
+
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
+                // Remove 'active' class from all tabs
                 tabs.forEach(t => t.classList.remove('active'));
+                // Add 'active' class to the clicked tab
                 tab.classList.add('active');
+
+                // Get the filter category from the data-filter attribute
+                const filter = tab.getAttribute('data-filter');
+
+                // Loop through all product cards
+                productCards.forEach(card => {
+                    // Get the card's categories from the data-category attribute
+                    const categories = card.getAttribute('data-category').split(' ');
+
+                    // Check if the card's categories include the filter category
+                    if (filter === 'all' || categories.includes(filter)) {
+                        // Show the parent column by removing the 'hidden' class
+                        card.parentElement.classList.remove('hidden');
+                    } else {
+                        // Hide the parent column by adding the 'hidden' class
+                        card.parentElement.classList.add('hidden');
+                    }
+                });
             });
         });
 
