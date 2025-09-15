@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        
         :root {
             --teal-primary: #00589b;
             --teal-secondary: #0068b8;
@@ -19,48 +18,61 @@
             --text-light: #6c757d;
             --text-glass: #ecececcc;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             overflow-x: hidden;
             background-color: #f8f9fa;
         }
-        
+
         /* Style the main dropdown menu container */
         .navbar .dropdown-menu {
-            border-radius: 12px;         /* Rounded corners for a modern look */
-            border: 1px solid #e9ecef;   /* Subtle border */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
-            padding: 0.5rem 0;           /* Add some vertical padding */
-            margin-top: 10px !important; /* Push it slightly down from the 'Products' link */
+            border-radius: 12px;
+            /* Rounded corners for a modern look */
+            border: 1px solid #e9ecef;
+            /* Subtle border */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            /* Soft shadow for depth */
+            padding: 0.5rem 0;
+            /* Add some vertical padding */
+            margin-top: 10px !important;
+            /* Push it slightly down from the 'Products' link */
         }
 
         /* Style individual dropdown items */
         .navbar .dropdown-item {
-            padding: 0.6rem 1.2rem;       /* More padding for easier clicking */
-            color: var(--text-dark);               /* Darker text color for readability */
-            transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+            padding: 0.6rem 1.2rem;
+            /* More padding for easier clicking */
+            color: var(--text-dark);
+            /* Darker text color for readability */
+            transition: all 0.2s ease-in-out;
+            /* Smooth transition for hover effects */
         }
 
-                /* Hover effect for dropdown items */
+        /* Hover effect for dropdown items */
         .navbar .dropdown-item:hover {
-            background-color: #f8f9fa;   /* Light grey background on hover */
-            color: var(--teal-primary);  /* Use your site's primary teal color for text */
-            border-radius: 6px;          /* Slightly rounded corners on the hovered item */
+            background-color: #f8f9fa;
+            /* Light grey background on hover */
+            color: var(--teal-primary);
+            /* Use your site's primary teal color for text */
+            border-radius: 6px;
+            /* Slightly rounded corners on the hovered item */
         }
 
         /* Style for the 'active' dropdown item */
         .navbar .dropdown-item.active,
         .navbar .dropdown-item:active {
-            background-color: var(--teal-primary); /* Your site's primary teal color */
-            color: #fff;                           /* White text for active item */
+            background-color: var(--teal-primary);
+            /* Your site's primary teal color */
+            color: #fff;
+            /* White text for active item */
             border-radius: 6px;
         }
 
@@ -78,14 +90,14 @@
             font-size: 1rem;
             box-shadow: 0 6px 15px rgba(10, 186, 181, 0.3);
         }
-        
+
         .btn-teal:hover {
             background-color: #089c98;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(10, 186, 181, 0.4);
         }
-        
+
         .btn-outline-teal {
             background-color: transparent;
             color: var(--teal-primary);
@@ -98,15 +110,14 @@
             letter-spacing: 1px;
             font-size: 1rem;
         }
-        
+
         .btn-outline-teal:hover {
             background-color: var(--teal-primary);
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(10, 186, 181, 0.3);
         }
-        
-        /* Navbar Styles */
+
         /* Navbar Styles */
         .navbar {
             padding: 20px 0;
@@ -168,8 +179,13 @@
         }
 
         @keyframes underline {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         .navbar .btn-teal {
@@ -177,21 +193,25 @@
             font-size: 0.95rem;
             background-color: var(--teal-primary);
             color: white;
-            border-radius: 9999px; /* Tailwind's rounded-full */
+            border-radius: 9999px;
+            /* Tailwind's rounded-full */
         }
 
         .dropdown-mega .dropdown-menu {
             left: 0;
             right: 0;
-            border-top: none; /* No top border to close the gap */
+            border-top: none;
+            /* No top border to close the gap */
             border-radius: 0;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             transition: visibility 0.3s, opacity 0.3s;
             visibility: hidden;
             opacity: 0;
-            display: block; /* We manage visibility with opacity and visibility */
+            display: block;
+            /* We manage visibility with opacity and visibility */
             margin-top: 0 !important;
         }
+
         .dropdown-mega:hover .dropdown-menu {
             visibility: visible;
             opacity: 1;
@@ -201,18 +221,11 @@
             color: var(--teal-primary);
             margin-bottom: 1rem;
             position: relative;
-            padding-bottom: 8px; /* Space for the underline */
-        }
-
-        .dropdown-mega h6::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px; /* Adjust length as needed */
-            height: 3px;
-            background: var(--teal-secondary);
-            border-radius: 2px;
+            padding-bottom: 8px;
+            /* Space for the underline */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
         }
 
         /* Colored line below headings */
@@ -220,26 +233,53 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
-            width: 50px; /* Adjust length as needed */
+            left: 50%;
+            /* Center the underline */
+            transform: translateX(-50%);
+            /* Adjust for perfect centering */
+            width: 50px;
+            /* Adjust length as needed */
             height: 3px;
             background: var(--teal-secondary);
             border-radius: 2px;
         }
 
+        /* Fix the parent list items to contain the clickable area */
+        .dropdown-mega .list-unstyled {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* This centers the items horizontally */
+            width: fit-content; /* This ensures the list only takes up necessary width */
+            margin: 0 auto; /* This centers the list on the page */
+            padding: 0; /* Remove default padding */
+        }
+
+        .dropdown-mega .list-unstyled li {
+            text-align: center;
+            width: fit-content;
+            list-style: none; /* Remove bullet points */
+        }
+
+        /* Style the links themselves */
         .dropdown-mega .dropdown-item {
-            padding: 0.5rem 0;
+            display: block;
+            padding: 0.5rem 1.2rem;
             color: var(--text-dark);
             font-weight: 500;
             transition: all 0.2s ease-in-out;
+            white-space: nowrap; /* Prevents wrapping if link text is long */
+            width: 100%; /* Ensures the link takes the full width of the li */
         }
 
         .dropdown-mega .dropdown-item:hover {
             color: var(--teal-primary);
             background-color: transparent;
-            padding-left: 5px;
+            }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
         }
-        
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--teal-light) 0%, var(--pink-accent) 100%);
@@ -1014,7 +1054,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="images/main/logo.png" width="" alt="Logo">
@@ -1035,10 +1075,10 @@
                     </a>
                     <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
                         <div class="container">
-                            <div class="row my-4">
-                                <div class="col-md-6 col-lg-2 mb-3 mb-lg-0">
-                                    <h6 class="text-uppercase fw-bold">Digitizing</h6>
-                                    <ul class="list-unstyled">
+                            <div class="row my-4 justify-content-center">
+                                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <h6 class="text-uppercase fw-bold text-center">Digitizing</h6>
+                                    <ul class="list-unstyled text-center">
                                         <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
@@ -1046,39 +1086,47 @@
                                     </ul>
                                 </div>
                                 <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                    <h6 class="text-uppercase fw-bold">Vectors</h6>
-                                    <ul class="list-unstyled">
+                                    <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
+                                    <ul class="list-unstyled text-center">
                                         <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-md-6 col-lg-2 mb-3 mb-md-0">
-                                    <h6 class="text-uppercase fw-bold">Keychain</h6>
-                                    <ul class="list-unstyled">
+                                <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                    <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
+                                    <ul class="list-unstyled text-center">
                                         <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
                                         <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
                                     </ul>
                                 </div>
-                                <div class="col-md-6 col-lg-2">
-                                    <h6 class="text-uppercase fw-bold">Patches</h6>
-                                    <ul class="list-unstyled">
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-lg-2">
-                                    <ul class="list-unstyled">
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                    </ul>
+                                <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <h6 class="text-uppercase fw-bold">Patches</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-6">
+                                            <ul class="list-unstyled text-center">
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                            <ul class="list-unstyled text-center">
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                                <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
