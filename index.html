@@ -508,26 +508,28 @@
             box-shadow: 0 8px 20px rgba(10, 186, 181, 0.3);
         }
         
+        /* Product Grid with Responsive Columns */
         .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px; /* Use gap property for spacing */
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
         }
-        
-        .product-card {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-            background: white;
-            transition: all 0.4s;
-            transform: translateY(0);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
-        }
-        
+
+    .product-card {
+        /* Use flex-basis to control card width, allowing it to grow */
+        flex-grow: 1;
+        flex-shrink: 1;
+        min-width: 280px; /* Ensures card doesn't get too small */
+        display: block;
+    }
+
+    .product-card.hidden {
+        display: none;
+    }
+
         .product-img {
             height: 280px;
             overflow: hidden;
@@ -1049,7 +1051,29 @@
                 width: 100%;
             }
         }
-    
+    /* Product Grid with Responsive Columns */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Default for small screens (3 columns) */
+            gap: 30px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+        /* Medium screens (992px) - 4 cards per row */
+        @media (min-width: 992px) {
+            .product-grid {
+                /* On medium screens, force 4 columns */
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Large screens (1200px) - 5 cards per row */
+        @media (min-width: 1200px) {
+            .product-grid {
+                /* On large screens, force 5 columns */
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1217,17 +1241,16 @@
                 <h2>Our Products</h2>
                 <p>Explore our premium custom product collections</p>
             </div>
-            
+
             <div class="product-tabs">
-                <button class="product-tab active">All Products</button>
-                <button class="product-tab">Patches</button>
-                <button class="product-tab">Vectors</button>
-                <button class="product-tab">Keychains</button>
+                <button class="product-tab active" data-filter="all">All Products</button>
+                <button class="product-tab" data-filter="patches">Patches</button>
+                <button class="product-tab" data-filter="vectors">Vectors</button>
+                <button class="product-tab" data-filter="keychains">Keychains</button>
             </div>
-            
+
             <div class="product-grid">
-                <!-- Patches -->
-                <div class="product-card">
+                <div class="product-card" data-category="patches all">
                     <div class="product-img">
                         <img src="images/patches/0.jpeg" alt="Embroidered Patch">
                         <div class="product-badge">Patches</div>
@@ -1241,8 +1264,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+
+                <div class="product-card" data-category="patches all">
                     <div class="product-img">
                         <img class="img-fluid" src="images/patches/1.jpeg" alt="PVC Patch">
                         <div class="product-badge">Patches</div>
@@ -1256,8 +1279,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+
+                <div class="product-card" data-category="patches all">
                     <div class="product-img">
                         <img src="images/patches/2.jpeg" alt="Leather Patch">
                         <div class="product-badge">Patches</div>
@@ -1271,9 +1294,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Vectors -->
-                <div class="product-card">
+
+                <div class="product-card" data-category="vectors all">
                     <div class="product-img">
                         <img src="images/patches/0.jpeg" alt="Logo Vector">
                         <div class="product-badge">Vectors</div>
@@ -1287,8 +1309,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+
+                <div class="product-card" data-category="vectors all">
                     <div class="product-img">
                         <img src="images/patches/0.jpeg" alt="Illustration Vector">
                         <div class="product-badge">Vectors</div>
@@ -1302,8 +1324,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+
+                <div class="product-card" data-category="vectors all">
                     <div class="product-img">
                         <img src="images/patches/0.jpeg" alt="Typography Vector">
                         <div class="product-badge">Vectors</div>
@@ -1317,9 +1339,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Keychains -->
-                <div class="product-card">
+
+                <div class="product-card" data-category="keychains all">
                     <div class="product-img">
                         <img src="images/keychains/0.jpeg" alt="Acrylic Keychain">
                         <div class="product-badge">Keychains</div>
@@ -1333,8 +1354,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+
+                <div class="product-card" data-category="keychains all">
                     <div class="product-img">
                         <img src="images/keychains/3.jpeg" alt="Metal Keychain">
                         <div class="product-badge">Keychains</div>
@@ -1348,8 +1369,8 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-card">
+
+                <div class="product-card" data-category="keychains all">
                     <div class="product-img">
                         <img src="images/keychains/2.jpeg" alt="Leather Keychain">
                         <div class="product-badge">Keychains</div>
@@ -1366,179 +1387,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Us</h2>
-                <p>We combine premium craftsmanship with exceptional service to bring your ideas to life</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Lightning Fast Turnaround</h3>
-                        <p>Receive your custom products in as little as 3 business days with our express production service.</p>
-                        <a href="#" class="btn btn-outline-teal">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3>Free Design Assistance</h3>
-                        <p>Our expert designers will perfect your artwork at no extra cost for stunning results.</p>
-                        <a href="#" class="btn btn-outline-teal">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3>Premium Quality Materials</h3>
-                        <p>We use only the highest quality materials and advanced manufacturing techniques.</p>
-                        <a href="#" class="btn btn-outline-teal">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Simple Process</h2>
-                <p>Four easy steps to get your custom products</p>
-            </div>
-            
-            <div class="process-container">
-                <div class="process-line"></div>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-pencil-alt"></i>
-                            <div class="step-number">1</div>
-                        </div>
-                        <h3>Design</h3>
-                        <p>Upload your design or collaborate with our experts to create your perfect product.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-file-invoice-dollar"></i>
-                            <div class="step-number">2</div>
-                        </div>
-                        <h3>Quote</h3>
-                        <p>Receive an instant quote based on your specifications with no hidden fees.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-check-circle"></i>
-                            <div class="step-number">3</div>
-                        </div>
-                        <h3>Approve</h3>
-                        <p>Review and approve your digital proof before we move to production.</p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-icon">
-                            <i class="fas fa-truck"></i>
-                            <div class="step-number">4</div>
-                        </div>
-                        <h3>Receive</h3>
-                        <p>Get your custom products delivered to your doorstep with fast shipping.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Customer Reviews</h2>
-                <p>What our clients say about our products and service</p>
-            </div>
-            
-            <div class="">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                            <div class="testimonial-header">
-                                <div class="client-img">
-                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2356DFCF'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,85 70,70' stroke='white' stroke-width='3' fill='none'/></svg>" alt="Client">
-                                </div>
-                                <div class="client-info">
-                                    <h4>Sarah Johnson</h4>
-                                    <p>Marketing Director</p>
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>"The custom patches we ordered exceeded our expectations! The quality is exceptional and the turnaround time was faster than promised. Will definitely order again!"</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                            <div class="testimonial-header">
-                                <div class="client-img">
-                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230ABAB5'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,55 70,70' stroke='white' stroke-width='3' fill='none'/></svg>" alt="Client">
-                                </div>
-                                <div class="client-info">
-                                    <h4>Michael Chen</h4>
-                                    <p>Small Business Owner</p>
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>"I needed custom keychains for a last-minute event. Not only did they deliver in record time, but the quality was outstanding. The free design help was a lifesaver!"</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="testimonial-card">
-                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
-                            <div class="testimonial-header">
-                                <div class="client-img">
-                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23ADEED9'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,85 70,70' stroke='white' stroke-width='3' fill='none'/></svg>" alt="Client">
-                                </div>
-                                <div class="client-info">
-                                    <h4>Emma Rodriguez</h4>
-                                    <p>Event Planner</p>
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>"Our nonprofit ordered embroidered patches for volunteers. The no minimum order policy allowed us to start small and the pricing was very reasonable. Highly recommend!"</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
@@ -1643,6 +1491,33 @@
                 tab.classList.add('active');
             });
         });
+
+         document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.product-tab');
+        const productGrid = document.querySelector('.product-grid');
+        const productCards = document.querySelectorAll('.product-card');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove 'active' class from all tabs and add to the clicked one
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                // Get the filter category from the clicked tab
+                const filter = tab.dataset.filter;
+
+                // Hide all cards, then show only the ones that match the filter
+                productCards.forEach(card => {
+                    const categories = card.dataset.category.split(' ');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
     </script>
 </body>
 </html>
