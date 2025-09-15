@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --teal-primary: #00589b;
@@ -248,16 +250,21 @@
         .dropdown-mega .list-unstyled {
             display: flex;
             flex-direction: column;
-            align-items: center; /* This centers the items horizontally */
-            width: fit-content; /* This ensures the list only takes up necessary width */
-            margin: 0 auto; /* This centers the list on the page */
-            padding: 0; /* Remove default padding */
+            align-items: center;
+            /* This centers the items horizontally */
+            width: fit-content;
+            /* This ensures the list only takes up necessary width */
+            margin: 0 auto;
+            /* This centers the list on the page */
+            padding: 0;
+            /* Remove default padding */
         }
 
         .dropdown-mega .list-unstyled li {
             text-align: center;
             width: fit-content;
-            list-style: none; /* Remove bullet points */
+            list-style: none;
+            /* Remove bullet points */
         }
 
         /* Style the links themselves */
@@ -267,19 +274,22 @@
             color: var(--text-dark);
             font-weight: 500;
             transition: all 0.2s ease-in-out;
-            white-space: nowrap; /* Prevents wrapping if link text is long */
-            width: 100%; /* Ensures the link takes the full width of the li */
+            white-space: nowrap;
+            /* Prevents wrapping if link text is long */
+            width: 100%;
+            /* Ensures the link takes the full width of the li */
         }
 
         .dropdown-mega .dropdown-item:hover {
             color: var(--teal-primary);
             background-color: transparent;
-            }
+        }
 
         .dropdown-mega .dropdown-item:hover {
             color: var(--teal-primary);
             background-color: transparent;
         }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--teal-light) 0%, var(--pink-accent) 100%);
@@ -287,7 +297,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero:before {
             content: '';
             position: absolute;
@@ -298,7 +308,7 @@
             top: -250px;
             right: -250px;
         }
-        
+
         .hero:after {
             content: '';
             position: absolute;
@@ -309,46 +319,46 @@
             bottom: -150px;
             left: -150px;
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 2;
         }
-        
+
         .hero h1 {
             font-weight: 800;
             font-size: 3.7rem;
             margin-bottom: 25px;
             line-height: 1.2;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 35px;
             max-width: 650px;
             color: #444;
         }
-        
+
         .hero-btns {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
         }
-        
+
         .hero-features {
             display: flex;
             gap: 40px;
             margin-top: 50px;
             flex-wrap: wrap;
         }
-        
+
         .feature-item {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         .feature-icon {
             width: 60px;
             height: 60px;
@@ -359,26 +369,26 @@
             justify-content: center;
             color: var(--teal-primary);
             font-size: 24px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
-        
+
         .feature-text h4 {
             font-weight: 700;
             margin-bottom: 5px;
         }
-        
+
         .feature-text p {
             font-size: 1rem;
             margin-bottom: 0;
             color: #555;
         }
-        
+
         .hero-image-container {
             position: relative;
             z-index: 1;
             perspective: 1000px;
         }
-        
+
         .hero-image {
             border-radius: 20px;
             overflow: hidden;
@@ -387,36 +397,36 @@
             transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
         }
-        
+
         .hero-image:hover {
             transform: rotateY(0) rotateX(0) rotateZ(0);
         }
-        
+
         /* Features Section */
         .features {
             padding: 100px 0;
             background: white;
         }
-        
+
         .section-title {
             position: relative;
             margin-bottom: 60px;
             text-align: center;
         }
-        
+
         .section-title h2 {
             font-weight: 800;
             font-size: 2.8rem;
             margin-bottom: 15px;
         }
-        
+
         .section-title p {
             font-size: 1.2rem;
             color: var(--text-light);
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .section-title:after {
             content: '';
             width: 100px;
@@ -428,7 +438,7 @@
             transform: translateX(-50%);
             border-radius: 5px;
         }
-        
+
         .feature-card {
             text-align: center;
             padding: 40px 25px;
@@ -438,15 +448,15 @@
             height: 100%;
             background: white;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
-        
+
         .feature-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
             border-color: transparent;
         }
-        
+
         .feature-icon {
             width: 90px;
             height: 90px;
@@ -458,20 +468,20 @@
             margin: 0 auto 25px;
             color: var(--teal-primary);
             font-size: 36px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         }
-        
+
         .feature-card h3 {
             font-weight: 700;
             margin-bottom: 15px;
             font-size: 1.6rem;
         }
-        
+
         .feature-card p {
             color: var(--text-light);
             margin-bottom: 20px;
         }
-        
+
         /* Products Section */
         .products {
             padding: 100px 0;
@@ -479,14 +489,14 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .product-tabs {
             display: flex;
             justify-content: center;
             margin-bottom: 50px;
             flex-wrap: wrap;
         }
-        
+
         .product-tab {
             padding: 15px 30px;
             background: white;
@@ -498,55 +508,54 @@
             color: var(--text-dark);
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
-        .product-tab.active, .product-tab:hover {
+
+        .product-tab.active,
+        .product-tab:hover {
             background: var(--teal-primary);
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(10, 186, 181, 0.3);
         }
-        
-        /* Product Grid with Responsive Columns */
+
         .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px; /* Use gap property for spacing */
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
         }
 
-    .product-card {
-        /* Use flex-basis to control card width, allowing it to grow */
-        flex-grow: 1;
-        flex-shrink: 1;
-        min-width: 280px; /* Ensures card doesn't get too small */
-        display: block;
-    }
+        .product-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            background: white;
+            transition: all 0.4s;
+            transform: translateY(0);
+        }
 
-    .product-card.hidden {
-        display: none;
-    }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+        }
 
         .product-img {
             height: 280px;
             overflow: hidden;
             position: relative;
         }
-        
+
         .product-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s;
         }
-        
+
         .product-card:hover .product-img img {
             transform: scale(1.08);
         }
-        
+
         .product-badge {
             position: absolute;
             top: 20px;
@@ -559,48 +568,48 @@
             font-size: 0.9rem;
             z-index: 2;
         }
-        
+
         .product-info {
             padding: 25px;
         }
-        
+
         .product-info h3 {
             font-weight: 700;
             margin-bottom: 10px;
             font-size: 1.5rem;
         }
-        
+
         .product-info p {
             color: var(--text-light);
             margin-bottom: 20px;
         }
-        
+
         .product-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
             padding-top: 20px;
             margin-top: 20px;
         }
-        
+
         .price {
             font-weight: 800;
             font-size: 1.4rem;
             color: var(--teal-primary);
         }
-        
+
         /* Process Section */
         .process {
             padding: 100px 0;
             background: white;
             position: relative;
         }
-        
+
         .process-container {
             position: relative;
         }
-        
+
         .process-line {
             position: absolute;
             top: 60px;
@@ -610,19 +619,19 @@
             background: var(--teal-light);
             z-index: 0;
         }
-        
+
         .process-steps {
             display: flex;
             justify-content: space-between;
             position: relative;
             z-index: 2;
         }
-        
+
         .process-step {
             text-align: center;
             width: 23%;
         }
-        
+
         .step-icon {
             width: 120px;
             height: 120px;
@@ -639,14 +648,14 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .process-step:hover .step-icon {
             background: var(--teal-primary);
             color: white;
             transform: scale(1.1);
             border-color: var(--teal-primary);
         }
-        
+
         .step-number {
             position: absolute;
             top: -10px;
@@ -661,26 +670,26 @@
             justify-content: center;
             font-weight: 700;
             font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .process-step h3 {
             font-weight: 700;
             margin-bottom: 15px;
             font-size: 1.4rem;
         }
-        
+
         /* Testimonials */
         .testimonials {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--teal-light) 0%, var(--pink-accent) 100%);
         }
-        
+
         .testimonial-container {
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .testimonial-card {
             background: white;
             border-radius: 20px;
@@ -690,12 +699,12 @@
             position: relative;
             transition: all 0.4s;
         }
-        
+
         .testimonial-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
         }
-        
+
         .testimonial-quote {
             position: absolute;
             top: 20px;
@@ -704,13 +713,13 @@
             color: var(--teal-light);
             opacity: 0.3;
         }
-        
+
         .testimonial-header {
             display: flex;
             align-items: center;
             margin-bottom: 25px;
         }
-        
+
         .client-img {
             width: 80px;
             height: 80px;
@@ -719,29 +728,66 @@
             margin-right: 20px;
             border: 3px solid var(--teal-light);
         }
-        
+
         .client-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .client-info h4 {
             font-weight: 700;
             margin-bottom: 5px;
         }
-        
+
         .client-info p {
             color: var(--text-light);
             margin-bottom: 0;
         }
-        
+
         .stars {
             color: #FFD700;
             font-size: 1.2rem;
             margin-bottom: 10px;
         }
-        
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--teal-light);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background: white;
+            padding: 20px 25px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .faq-answer.active {
+            padding: 20px 25px;
+            max-height: 500px;
+        }
+
         /* CTA Section */
         .cta {
             padding: 120px 0;
@@ -752,7 +798,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .cta:before {
             content: '';
             position: absolute;
@@ -763,7 +809,7 @@
             top: -150px;
             right: -150px;
         }
-        
+
         .cta:after {
             content: '';
             position: absolute;
@@ -774,36 +820,36 @@
             bottom: -100px;
             left: -100px;
         }
-        
+
         .cta-content {
             position: relative;
             z-index: 2;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .cta h2 {
             font-weight: 800;
             font-size: 3.2rem;
             margin-bottom: 25px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .cta p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 50px;
             opacity: 0.9;
         }
-        
+
         .cta .btn {
             padding: 18px 45px;
             font-size: 1.1rem;
             font-weight: 700;
             border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        
+
         /* Footer */
         .footer {
             background: var(--text-glass);
@@ -811,7 +857,7 @@
             padding: 80px 0 30px;
             position: relative;
         }
-        
+
         .footer:before {
             content: '';
             position: absolute;
@@ -821,14 +867,14 @@
             height: 4px;
             background: linear-gradient(90deg, var(--teal-primary), var(--teal-secondary));
         }
-        
+
         .footer h5 {
             font-weight: 700;
             margin-bottom: 25px;
             position: relative;
             font-size: 1.3rem;
         }
-        
+
         .footer h5:after {
             content: '';
             position: absolute;
@@ -838,34 +884,34 @@
             height: 3px;
             background: var(--teal-secondary);
         }
-        
+
         .footer ul {
             list-style: none;
             padding: 0;
         }
-        
+
         .footer ul li {
             margin-bottom: 15px;
         }
-        
+
         .footer ul li a {
             color: #b0b0b0;
             text-decoration: none;
             transition: all 0.3s;
             display: inline-block;
         }
-        
+
         .footer ul li a:hover {
             color: var(--teal-secondary);
             transform: translateX(5px);
         }
-        
+
         .social-icons {
             display: flex;
             gap: 15px;
             margin-top: 25px;
         }
-        
+
         .social-icons a {
             display: inline-flex;
             align-items: center;
@@ -878,17 +924,17 @@
             transition: all 0.3s;
             font-size: 1.2rem;
         }
-        
+
         .social-icons a:hover {
             background: var(--teal-primary);
             transform: translateY(-5px);
         }
-        
+
         .newsletter-form {
             display: flex;
             margin-top: 20px;
         }
-        
+
         .newsletter-form input {
             flex: 1;
             padding: 14px 20px;
@@ -896,7 +942,7 @@
             border-radius: 50px 0 0 50px;
             outline: none;
         }
-        
+
         .newsletter-form button {
             background: var(--teal-primary);
             color: white;
@@ -906,11 +952,11 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .newsletter-form button:hover {
             background: var(--teal-secondary);
         }
-        
+
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 25px;
@@ -919,7 +965,7 @@
             font-size: 0.95rem;
             color: #b0b0b0;
         }
-        
+
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -937,244 +983,234 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.4s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .back-to-top:hover {
             background: var(--teal-secondary);
             transform: translateY(-5px);
         }
-        
+
         /* Animations */
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
-        
+
         .floating {
             animation: float 4s ease-in-out infinite;
         }
-        
+
         /* Responsive Adjustments */
         @media (max-width: 1199px) {
             .hero h1 {
                 font-size: 3.3rem;
             }
-            
+
             .process-steps {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
+
             .process-step {
                 width: 48%;
                 margin-bottom: 40px;
             }
-            
+
             .process-line {
                 display: none;
             }
         }
-        
+
         @media (max-width: 991px) {
             .hero {
                 padding: 120px 0 80px;
             }
-            
+
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2.3rem;
             }
-            
+
             .feature-card {
                 padding: 30px 20px;
             }
-            
-            .features, .products, .process, .testimonials, .cta {
+
+            .features,
+            .products,
+            .process,
+            .testimonials,
+            .cta {
                 padding: 80px 0;
             }
         }
-        
+
         @media (max-width: 767px) {
             .hero h1 {
                 font-size: 2.4rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .hero-btns {
                 flex-direction: column;
             }
-            
+
             .product-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .process-step {
                 width: 100%;
             }
-            
+
             .cta h2 {
                 font-size: 2.5rem;
             }
-            
+
             .cta p {
                 font-size: 1.1rem;
             }
-            
+
             .footer .col-md-6 {
                 margin-bottom: 40px;
             }
         }
-        
+
         @media (max-width: 575px) {
             .hero h1 {
                 font-size: 2.1rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .feature-item {
                 width: 100%;
             }
         }
-    /* Product Grid with Responsive Columns */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Default for small screens (3 columns) */
-            gap: 30px;
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
-        /* Medium screens (992px) - 4 cards per row */
-        @media (min-width: 992px) {
-            .product-grid {
-                /* On medium screens, force 4 columns */
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        /* Large screens (1200px) - 5 cards per row */
-        @media (min-width: 1200px) {
-            .product-grid {
-                /* On large screens, force 5 columns */
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="images/main/logo.png" width="" alt="Logo">
-            Sky<span>Stitch</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/main/logo.png" width="" alt="Logo">
+                Sky<span>Stitch</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-                <li class="nav-item dropdown dropdown-mega position-static">
-                    <a class="nav-link dropdown-toggle" href="#" id="megaMenu" aria-expanded="false">
-                        Products
-                    </a>
-                    <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
-                        <div class="container">
-                            <div class="row my-4 justify-content-center">
-                                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                    <h6 class="text-uppercase fw-bold text-center">Digitizing</h6>
-                                    <ul class="list-unstyled text-center">
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                    <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
-                                    <ul class="list-unstyled text-center">
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-                                    <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
-                                    <ul class="list-unstyled text-center">
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <h6 class="text-uppercase fw-bold">Patches</h6>
-                                        </div>
+                    <li class="nav-item dropdown dropdown-mega position-static">
+                        <a class="nav-link dropdown-toggle" href="#" id="megaMenu" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
+                            <div class="container">
+                                <div class="row my-4 justify-content-center">
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Digitizing</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                        </ul>
                                     </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-6">
-                                            <ul class="list-unstyled text-center">
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                            </ul>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <h6 class="text-uppercase fw-bold">Patches</h6>
+                                            </div>
                                         </div>
-                                        <div class="col-6">
-                                            <ul class="list-unstyled text-center">
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                                <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                            </ul>
+                                        <div class="row justify-content-center">
+                                            <div class="col-6">
+                                                <ul class="list-unstyled text-center">
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6">
+                                                <ul class="list-unstyled text-center">
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                                    <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">How It Works</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FAQ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-            <div class="d-flex mt-3 mt-lg-0">
-                <a href="#" class="btn btn-teal">Get Quote</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-teal">Get Quote</a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1183,7 +1219,8 @@
                 <div class="col-lg-6">
                     <div class="hero-content">
                         <h1>Transform Your Ideas Into Stunning Custom Products</h1>
-                        <p>Premium patches, vectors, and keychains with no minimum order requirements, lightning-fast turnaround, and expert design assistance.</p>
+                        <p>Premium patches, vectors, and keychains with no minimum order requirements, lightning-fast
+                            turnaround, and expert design assistance.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 p-5">
@@ -1195,204 +1232,450 @@
                 </div>
                 <div class="col">
                     <div class="hero-btns">
-                            <a href="#" class="btn btn-teal">Start Designing <i class="fas fa-arrow-right ms-2"></i></a>
-                            <a href="#" class="btn btn-outline-teal">View Gallery</a>
-                        </div>
-                        <div class="hero-features mt-4">
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-bolt"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>3-Day Production</h4>
-                                    <p>Express turnaround available</p>
-                                </div>
+                        <a href="#" class="btn btn-teal">Start Designing <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#" class="btn btn-outline-teal">View Gallery</a>
+                    </div>
+                    <div class="hero-features mt-4">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
                             </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-palette"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Free Design Help</h4>
-                                    <p>Expert assistance included</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-medal"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h4>Premium Quality</h4>
-                                    <p>Guaranteed satisfaction</p>
-                                </div>
+                            <div class="feature-text">
+                                <h4>3-Day Production</h4>
+                                <p>Express turnaround available</p>
                             </div>
                         </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Free Design Help</h4>
+                                <p>Expert assistance included</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Premium Quality</h4>
+                                <p>Guaranteed satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
+
 
     <!-- Products Section -->
     <section class="products">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title text-center mb-5">
                 <h2>Our Products</h2>
                 <p>Explore our premium custom product collections</p>
             </div>
 
-            <div class="product-tabs">
+            <!-- Tabs -->
+            <div class="product-tabs mb-4 text-center">
                 <button class="product-tab active" data-filter="all">All Products</button>
                 <button class="product-tab" data-filter="patches">Patches</button>
                 <button class="product-tab" data-filter="vectors">Vectors</button>
                 <button class="product-tab" data-filter="keychains">Keychains</button>
             </div>
 
-            <div class="product-grid">
-                <div class="product-card" data-category="patches all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Embroidered Patch">
-                        <div class="product-badge">Patches</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Embroidered Patches</h3>
-                        <p>Premium embroidered patches with intricate detailing and vibrant colors. Perfect for uniforms, bags, and accessories.</p>
-                        <div class="product-meta">
-                            <span class="price">$2.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+            <!-- Product Grid -->
+            <div class="row g-4">
+
+                <!-- Patches -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <img src="images/patches/0.jpeg" alt="Embroidered Patch">
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Embroidered Patches</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="patches all">
-                    <div class="product-img">
-                        <img class="img-fluid" src="images/patches/1.jpeg" alt="PVC Patch">
-                        <div class="product-badge">Patches</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>PVC Patches</h3>
-                        <p>Durable PVC patches with vibrant colors and 3D effects. Waterproof and perfect for outdoor gear.</p>
-                        <div class="product-meta">
-                            <span class="price">$3.49</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <img src="images/patches/1.jpeg" alt="PVC Patch">
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>PVC Patches</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="patches all">
-                    <div class="product-img">
-                        <img src="images/patches/2.jpeg" alt="Leather Patch">
-                        <div class="product-badge">Patches</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Leather Patches</h3>
-                        <p>Premium leather patches with embossed or debossed designs. Classic look for denim and jackets.</p>
-                        <div class="product-meta">
-                            <span class="price">$4.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <img src="images/patches/2.jpeg" alt="Leather Patch">
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Leather Patches</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="vectors all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Logo Vector">
-                        <div class="product-badge">Vectors</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Logo Vectors</h3>
-                        <p>Professional logo vectorization services. Convert any image to scalable vector format.</p>
-                        <div class="product-meta">
-                            <span class="price">$24.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                <!-- Vectors -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="vectors all">
+                        <div class="product-img">
+                            <img src="images/patches/0.jpeg" alt="Logo Vector">
+                            <div class="product-badge">Vectors</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Logo Vectors</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="vectors all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Illustration Vector">
-                        <div class="product-badge">Vectors</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Illustration Vectors</h3>
-                        <p>Custom vector illustrations for branding, marketing materials, and digital products.</p>
-                        <div class="product-meta">
-                            <span class="price">$49.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="vectors all">
+                        <div class="product-img">
+                            <img src="images/patches/0.jpeg" alt="Illustration Vector">
+                            <div class="product-badge">Vectors</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Illustration Vectors</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="vectors all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Typography Vector">
-                        <div class="product-badge">Vectors</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Typography Vectors</h3>
-                        <p>Custom typography and lettering vectors for unique branding and design projects.</p>
-                        <div class="product-meta">
-                            <span class="price">$34.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="vectors all">
+                        <div class="product-img">
+                            <img src="images/patches/0.jpeg" alt="Typography Vector">
+                            <div class="product-badge">Vectors</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Typography Vectors</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="keychains all">
-                    <div class="product-img">
-                        <img src="images/keychains/0.jpeg" alt="Acrylic Keychain">
-                        <div class="product-badge">Keychains</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Acrylic Keychains</h3>
-                        <p>Vibrant acrylic keychains with full-color printing. Durable and eye-catching.</p>
-                        <div class="product-meta">
-                            <span class="price">$1.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                <!-- Keychains -->
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <img src="images/keychains/0.jpeg" alt="Acrylic Keychain">
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Acrylic Keychains</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="keychains all">
-                    <div class="product-img">
-                        <img src="images/keychains/3.jpeg" alt="Metal Keychain">
-                        <div class="product-badge">Keychains</div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Metal Keychains</h3>
-                        <p>Premium metal keychains with engraving or enamel filling. Professional and durable.</p>
-                        <div class="product-meta">
-                            <span class="price">$3.49</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <img src="images/keychains/3.jpeg" alt="Metal Keychain">
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Metal Keychains</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="keychains all">
-                    <div class="product-img">
-                        <img src="images/keychains/2.jpeg" alt="Leather Keychain">
-                        <div class="product-badge">Keychains</div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <img src="images/keychains/2.jpeg" alt="Leather Keychain">
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Leather Keychains</h3>
+                        </div>
                     </div>
-                    <div class="product-info">
-                        <h3>Leather Keychains</h3>
-                        <p>Elegant leather keychains with embossing or debossing. Perfect for gifts and branding.</p>
-                        <div class="product-meta">
-                            <span class="price">$4.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>We combine premium craftsmanship with exceptional service to bring your ideas to life</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Lightning Fast Turnaround</h3>
+                        <p>Receive your custom products in as little as 3 business days with our express production
+                            service.</p>
+                        <a href="#" class="btn btn-outline-teal">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Free Design Assistance</h3>
+                        <p>Our expert designers will perfect your artwork at no extra cost for stunning results.</p>
+                        <a href="#" class="btn btn-outline-teal">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Premium Quality Materials</h3>
+                        <p>We use only the highest quality materials and advanced manufacturing techniques.</p>
+                        <a href="#" class="btn btn-outline-teal">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Simple Process</h2>
+                <p>Four easy steps to get your custom products</p>
+            </div>
+
+            <div class="process-container">
+                <div class="process-line"></div>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                            <div class="step-number">1</div>
+                        </div>
+                        <h3>Design</h3>
+                        <p>Upload your design or collaborate with our experts to create your perfect product.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <div class="step-number">2</div>
+                        </div>
+                        <h3>Quote</h3>
+                        <p>Receive an instant quote based on your specifications with no hidden fees.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="step-number">3</div>
+                        </div>
+                        <h3>Approve</h3>
+                        <p>Review and approve your digital proof before we move to production.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">
+                            <i class="fas fa-truck"></i>
+                            <div class="step-number">4</div>
+                        </div>
+                        <h3>Receive</h3>
+                        <p>Get your custom products delivered to your doorstep with fast shipping.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Reviews</h2>
+                <p>What our clients say about our products and service</p>
+            </div>
+
+            <div class="">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-header">
+                                <div class="client-img">
+                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2356DFCF'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,85 70,70' stroke='white' stroke-width='3' fill='none'/></svg>"
+                                        alt="Client">
+                                </div>
+                                <div class="client-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Marketing Director</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"The custom patches we ordered exceeded our expectations! The quality is exceptional and
+                                the turnaround time was faster than promised. Will definitely order again!"</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-header">
+                                <div class="client-img">
+                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230ABAB5'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,55 70,70' stroke='white' stroke-width='3' fill='none'/></svg>"
+                                        alt="Client">
+                                </div>
+                                <div class="client-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Small Business Owner</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"I needed custom keychains for a last-minute event. Not only did they deliver in record
+                                time, but the quality was outstanding. The free design help was a lifesaver!"</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-header">
+                                <div class="client-img">
+                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23ADEED9'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,85 70,70' stroke='white' stroke-width='3' fill='none'/></svg>"
+                                        alt="Client">
+                                </div>
+                                <div class="client-info">
+                                    <h4>Emma Rodriguez</h4>
+                                    <p>Event Planner</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Our nonprofit ordered embroidered patches for volunteers. The no minimum order policy
+                                allowed us to start small and the pricing was very reasonable. Highly recommend!"</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our custom patches</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What's the minimum order quantity?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We have no minimum order requirements! You can order as few as one patch. Whether you
+                                need a single custom patch or thousands, we can accommodate your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How long does production take?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Standard production time is 7-10 business days. We also offer rush production options
+                                that can reduce turnaround to as little as 3 business days for most orders.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What file formats do you accept?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept all common file formats including AI, EPS, PDF, PSD, PNG, and JPG. For best
+                                results, vector files (AI, EPS) are preferred. Our design team can help with file
+                                conversion if needed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can you help with design?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our design team offers free design assistance. Send us your ideas, sketches,
+                                or concepts and we'll create professional patch artwork at no extra cost.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What's the maximum size for patches?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We can create patches up to 12 inches in any dimension. For larger sizes, we recommend
+                                our PVC or sublimation options which maintain quality at larger dimensions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you offer international shipping?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we ship worldwide. We offer several shipping options including standard
+                                international mail, DHL, and FedEx. Shipping costs and times vary by destination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Create Something Amazing?</h2>
-                <p>Get started with a free quote today. No obligation, just expert advice on your custom product needs.</p>
+                <p>Get started with a free quote today. No obligation, just expert advice on your custom product needs.
+                </p>
                 <a href="#" class="btn btn-light">Get Your Free Quote</a>
             </div>
         </div>
@@ -1403,8 +1686,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                    <h3 class="navbar-brand  mb-4"><img src="images/main/logo.png" alt="Logo"> Sky<span>Stitch</span></h3>
-                    <p class="mb-4">Creating premium custom products with exceptional quality, fast turnaround, and outstanding customer service since 2015.</p>
+                    <h3 class="navbar-brand  mb-4"><img src="images/main/logo.png" alt="Logo"> Sky<span>Stitch</span>
+                    </h3>
+                    <p class="mb-4">Creating premium custom products with exceptional quality, fast turnaround, and
+                        outstanding customer service since 2015.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1448,7 +1733,8 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 CustomCrafted. All rights reserved. | Designed with <i class="fas fa-heart text-danger"></i> for creators worldwide</p>
+                <p>&copy; 2023 CustomCrafted. All rights reserved. | Designed with <i
+                        class="fas fa-heart text-danger"></i> for creators worldwide</p>
             </div>
         </div>
     </footer>
@@ -1460,14 +1746,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Navbar scroll effect
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
+
             // Back to top button
             const backToTop = document.querySelector('.back-to-top');
             if (window.scrollY > 500) {
@@ -1476,13 +1762,13 @@
                 backToTop.classList.remove('active');
             }
         });
-        
+
         // Initialize tooltips
         const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
         const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
-        
+
         // Tab functionality
         const tabs = document.querySelectorAll('.product-tab');
         tabs.forEach(tab => {
@@ -1492,32 +1778,24 @@
             });
         });
 
-         document.addEventListener('DOMContentLoaded', () => {
-        const tabs = document.querySelectorAll('.product-tab');
-        const productGrid = document.querySelector('.product-grid');
-        const productCards = document.querySelectorAll('.product-card');
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove 'active' class from all tabs and add to the clicked one
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                // Get the filter category from the clicked tab
-                const filter = tab.dataset.filter;
-
-                // Hide all cards, then show only the ones that match the filter
-                productCards.forEach(card => {
-                    const categories = card.dataset.category.split(' ');
-                    if (filter === 'all' || categories.includes(filter)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+                const icon = question.querySelector('i');
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
             });
         });
-    });
     </script>
 </body>
+
 </html>

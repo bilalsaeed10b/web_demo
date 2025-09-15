@@ -1,26 +1,70 @@
-
-        :root {
-            --teal-primary: #0ABAB5;
-            --teal-secondary: #56DFCF;
-            --teal-light: #ADEED9;
+:root {
+            --teal-primary: #00589b;
+            --teal-secondary: #0068b8;
+            --teal-light: #dbf5ff;
             --pink-accent: #FFEDF3;
             --text-dark: #333333;
             --text-light: #6c757d;
+            --text-glass: #ecececcc;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             overflow-x: hidden;
             background-color: #f8f9fa;
         }
-        
+
+        /* Style the main dropdown menu container */
+        .navbar .dropdown-menu {
+            border-radius: 12px;
+            /* Rounded corners for a modern look */
+            border: 1px solid #e9ecef;
+            /* Subtle border */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            /* Soft shadow for depth */
+            padding: 0.5rem 0;
+            /* Add some vertical padding */
+            margin-top: 10px !important;
+            /* Push it slightly down from the 'Products' link */
+        }
+
+        /* Style individual dropdown items */
+        .navbar .dropdown-item {
+            padding: 0.6rem 1.2rem;
+            /* More padding for easier clicking */
+            color: var(--text-dark);
+            /* Darker text color for readability */
+            transition: all 0.2s ease-in-out;
+            /* Smooth transition for hover effects */
+        }
+
+        /* Hover effect for dropdown items */
+        .navbar .dropdown-item:hover {
+            background-color: #f8f9fa;
+            /* Light grey background on hover */
+            color: var(--teal-primary);
+            /* Use your site's primary teal color for text */
+            border-radius: 6px;
+            /* Slightly rounded corners on the hovered item */
+        }
+
+        /* Style for the 'active' dropdown item */
+        .navbar .dropdown-item.active,
+        .navbar .dropdown-item:active {
+            background-color: var(--teal-primary);
+            /* Your site's primary teal color */
+            color: #fff;
+            /* White text for active item */
+            border-radius: 6px;
+        }
+
         /* Custom Buttons */
         .btn-teal {
             background-color: var(--teal-primary);
@@ -35,14 +79,14 @@
             font-size: 1rem;
             box-shadow: 0 6px 15px rgba(10, 186, 181, 0.3);
         }
-        
+
         .btn-teal:hover {
             background-color: #089c98;
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(10, 186, 181, 0.4);
         }
-        
+
         .btn-outline-teal {
             background-color: transparent;
             color: var(--teal-primary);
@@ -55,28 +99,32 @@
             letter-spacing: 1px;
             font-size: 1rem;
         }
-        
+
         .btn-outline-teal:hover {
             background-color: var(--teal-primary);
             color: white;
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(10, 186, 181, 0.3);
         }
-        
+
         /* Navbar Styles */
         .navbar {
             padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.95) !important;
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             backdrop-filter: blur(10px);
             transition: all 0.4s;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
-        
+
         .navbar.scrolled {
             padding: 12px 0;
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .navbar-brand {
             font-weight: 800;
             color: var(--teal-primary);
@@ -85,16 +133,16 @@
             display: flex;
             align-items: center;
         }
-        
+
         .navbar-brand img {
-            height: 45px;
+            height: 110px;
             margin-right: 10px;
         }
-        
+
         .navbar-brand span {
             color: var(--text-dark);
         }
-        
+
         .nav-link {
             font-weight: 600;
             color: var(--text-dark) !important;
@@ -103,12 +151,12 @@
             position: relative;
             font-size: 1.05rem;
         }
-        
+
         .nav-link:hover {
             color: var(--teal-primary) !important;
         }
-        
-        .nav-link:hover:after {
+
+        .nav-link:hover::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -118,17 +166,109 @@
             background: var(--teal-secondary);
             animation: underline 0.3s ease-out;
         }
-        
+
         @keyframes underline {
-            from { width: 0; }
-            to { width: 100%; }
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
-        
+
         .navbar .btn-teal {
             padding: 10px 26px;
             font-size: 0.95rem;
+            background-color: var(--teal-primary);
+            color: white;
+            border-radius: 9999px;
+            /* Tailwind's rounded-full */
         }
-        
+
+        .dropdown-mega .dropdown-menu {
+            left: 0;
+            right: 0;
+            border-top: none;
+            /* No top border to close the gap */
+            border-radius: 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: visibility 0.3s, opacity 0.3s;
+            visibility: hidden;
+            opacity: 0;
+            display: block;
+            /* We manage visibility with opacity and visibility */
+            margin-top: 0 !important;
+        }
+
+        .dropdown-mega:hover .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .dropdown-mega h6 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 8px;
+            /* Space for the underline */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        /* Colored line below headings */
+        .dropdown-mega h6::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            /* Center the underline */
+            transform: translateX(-50%);
+            /* Adjust for perfect centering */
+            width: 50px;
+            /* Adjust length as needed */
+            height: 3px;
+            background: var(--teal-secondary);
+            border-radius: 2px;
+        }
+
+        /* Fix the parent list items to contain the clickable area */
+        .dropdown-mega .list-unstyled {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* This centers the items horizontally */
+            width: fit-content; /* This ensures the list only takes up necessary width */
+            margin: 0 auto; /* This centers the list on the page */
+            padding: 0; /* Remove default padding */
+        }
+
+        .dropdown-mega .list-unstyled li {
+            text-align: center;
+            width: fit-content;
+            list-style: none; /* Remove bullet points */
+        }
+
+        /* Style the links themselves */
+        .dropdown-mega .dropdown-item {
+            display: block;
+            padding: 0.5rem 1.2rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            white-space: nowrap; /* Prevents wrapping if link text is long */
+            width: 100%; /* Ensures the link takes the full width of the li */
+        }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
+            }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
+        }
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--teal-light) 0%, var(--pink-accent) 100%);
@@ -166,7 +306,7 @@
         
         .hero h1 {
             font-weight: 800;
-            font-size: 3.8rem;
+            font-size: 3.7rem;
             margin-bottom: 25px;
             line-height: 1.2;
             text-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -359,7 +499,7 @@
         
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 30px;
         }
         
@@ -588,11 +728,48 @@
             font-size: 1.2rem;
             margin-bottom: 10px;
         }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--teal-light);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 20px 25px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+        
+        .faq-answer.active {
+            padding: 20px 25px;
+            max-height: 500px;
+        }
         
         /* CTA Section */
         .cta {
             padding: 120px 0;
-            background: linear-gradient(rgba(10, 186, 181, 0.92), rgba(10, 186, 181, 0.92)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="50" height="50" fill="rgba(255,255,255,0.1)"/><rect x="50" y="50" width="50" height="50" fill="rgba(255,255,255,0.1)"/></svg>');
+            background: #06365A;
             background-size: 20px;
             text-align: center;
             color: white;
@@ -653,8 +830,8 @@
         
         /* Footer */
         .footer {
-            background: var(--text-dark);
-            color: white;
+            background: var(--text-glass);
+            color: rgb(41, 41, 41);
             padding: 80px 0 30px;
             position: relative;
         }
@@ -720,7 +897,7 @@
             width: 45px;
             height: 45px;
             background: rgba(255, 255, 255, 0.1);
-            color: white;
+            color: #00589b;
             border-radius: 50%;
             transition: all 0.3s;
             font-size: 1.2rem;
@@ -898,4 +1075,3 @@
                 width: 100%;
             }
         }
-    
