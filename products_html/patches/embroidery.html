@@ -1119,109 +1119,71 @@
                 width: 100%;
             }
         }
+
+        /* Image Pop-up Styles */
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+        }
+
+        .image-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .enlarged-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(0.8);
+            transition: transform 0.4s ease-out;
+        }
+
+        .image-overlay.active .enlarged-img {
+            transform: scale(1);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #06b6d4; /* teal-primary */
+        }
+
+        /* Background dulling effect */
+        body.overlay-active > *:not(.image-overlay) {
+            filter: blur(5px) brightness(0.7);
+            pointer-events: none;
+            transition: filter 0.4s ease-in-out;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/main/logo.png" width="" alt="Logo">
-                Sky<span>Stitch</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-
-                    <li class="nav-item dropdown dropdown-mega position-static">
-                        <a class="nav-link dropdown-toggle" href="#" id="megaMenu" aria-expanded="false">
-                            Products
-                        </a>
-                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
-                            <div class="container">
-                                <div class="row my-4 justify-content-center">
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                        <h6 class="text-uppercase fw-bold text-center">Digitizing</h6>
-                                        <ul class="list-unstyled text-center">
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                                        <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
-                                        <ul class="list-unstyled text-center">
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-                                        <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
-                                        <ul class="list-unstyled text-center">
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                            <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-                                        <div class="row">
-                                            <div class="col-12 text-center">
-                                                <h6 class="text-uppercase fw-bold">Patches</h6>
-                                            </div>
-                                        </div>
-                                        <div class="row justify-content-center">
-                                            <div class="col-6">
-                                                <ul class="list-unstyled text-center">
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <ul class="list-unstyled text-center">
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
-                                                    <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="d-flex mt-3 mt-lg-0">
-                    <a href="#" class="btn btn-teal">Get Quote</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
+    <div id="navbar-placeholder"></div>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -1236,11 +1198,45 @@
                 <div class="col-lg-6 p-5">
                     <div class="hero-image-container">
                         <div class="hero-image">
-                            <img src="images/hero-image.jpg" class="img-fluid" alt="Custom Products">
+                            <img src="../../images/hero-image.jpg" class="img-fluid" alt="Custom Products">
                         </div>
                     </div>
                 </div>
-            
+                <div class="col">
+                    <div class="hero-btns">
+                        <a href="#" class="btn btn-teal">Start Designing <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#" class="btn btn-outline-teal">View Gallery</a>
+                    </div>
+                    <div class="hero-features mt-4">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>3-Day Production</h4>
+                                <p>Express turnaround available</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Free Design Help</h4>
+                                <p>Expert assistance included</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Premium Quality</h4>
+                                <p>Guaranteed satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1266,9 +1262,6 @@
                     </div>
                 </div>
                 
-                
-
-
             </div>
         </div>
     </section>
@@ -1285,72 +1278,66 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
-                    <h3 class="navbar-brand  mb-4"><img src="images/main/logo.png" alt="Logo"> Sky<span>Stitch</span>
-                    </h3>
-                    <p class="mb-4">Creating premium custom products with exceptional quality, fast turnaround, and
-                        outstanding customer service since 2015.</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-                    <h5>Products</h5>
-                    <ul>
-                        <li><a href="#">Patches</a></li>
-                        <li><a href="#">Vectors</a></li>
-                        <li><a href="#">Keychains</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5>Newsletter</h5>
-                    <p>Subscribe to get special offers, free design resources, and updates.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Your email address">
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                    <div class="mt-4">
-                        <h5>Contact Info</h5>
-                        <ul>
-                            <li><i class="fas fa-map-marker-alt me-2"></i> 123 Design Street, Creative City</li>
-                            <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
-                            <li><i class="fas fa-envelope me-2"></i> info@customcrafted.com</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 CustomCrafted. All rights reserved. | Designed with <i
-                        class="fas fa-heart text-danger"></i> for creators worldwide</p>
-            </div>
-        </div>
-    </footer>
+
+    <div id="footer-placeholder"></div>
 
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
+
+    <div id="image-overlay" class="image-overlay">
+    <span class="close-btn">&times;</span>
+    <img id="enlarged-img" class="enlarged-img" src="" alt="Enlarged Patch">
+    </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
 
-        
+        // Function to load a component from an external file
+        async function loadComponent(url, elementId) {
+            try {
+                const response = await fetch(url);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component from ${url}:`, error);
+            }
+        }
+
+        // Load the navbar and footer when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('../../assets/navbar.html', 'navbar-placeholder');
+            loadComponent('../../assets/footer.html', 'footer-placeholder');
+        });
+        const productCards = document.querySelectorAll('.product-card');
+        const imageOverlay = document.getElementById('image-overlay');
+        const enlargedImg = document.getElementById('enlarged-img');
+        const closeBtn = document.querySelector('.close-btn');
+        const body = document.body;
+
+        productCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const imgSrc = card.querySelector('img').src;
+                enlargedImg.src = imgSrc;
+                imageOverlay.classList.add('active');
+                body.classList.add('overlay-active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            imageOverlay.classList.remove('active');
+            body.classList.remove('overlay-active');
+        });
+
+        imageOverlay.addEventListener('click', (e) => {
+            if (e.target.id === 'image-overlay') {
+                imageOverlay.classList.remove('active');
+                body.classList.remove('overlay-active');
+            }
+        });
+            
         // Navbar scroll effect
         window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
@@ -1372,6 +1359,8 @@
 
 
     </script>
+
+
 </body>
 
 </html>
