@@ -560,34 +560,46 @@
             z-index: 2;
         }
         
-        .product-info {
-            padding: 25px;
-        }
-        
-        .product-info h3 {
-            font-weight: 700;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
         
         .product-info p {
             color: var(--text-light);
             margin-bottom: 20px;
         }
         
-        .product-meta {
+        /* New overlay styles for hover effect */
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            color: white;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 20px;
-            margin-top: 20px;
+            padding: 20px;
+            opacity: 0; /* Initially hidden */
+            visibility: hidden;
+            transition: all 0.4s ease-in-out;
         }
-        
-        .price {
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--teal-primary);
+
+        .product-card:hover .product-overlay {
+            opacity: 1; /* Fade in on hover */
+            visibility: visible;
+        }
+
+        .product-overlay h3 {
+            color: white; /* Ensure heading is white */
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .product-overlay p {
+            color: rgba(255, 255, 255, 0.9); /* Lighter white for readability */
+            font-size: 0.95rem;
+            text-align: center;
         }
         
         /* Process Section */
@@ -1236,157 +1248,121 @@
 
     <!-- Products Section -->
     <section class="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Products</h2>
-                <p>Explore our premium custom product collections</p>
-            </div>
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>Explore our premium custom product collections</p>
+        </div>
 
-            <div class="product-tabs">
-                <button class="product-tab active" data-filter="all">All Products</button>
-                <button class="product-tab" data-filter="patches">Patches</button>
-                <button class="product-tab" data-filter="vectors">Vectors</button>
-                <button class="product-tab" data-filter="keychains">Keychains</button>
-            </div>
+        <div class="product-tabs">
+            <button class="product-tab active" data-filter="all">All Products</button>
+            <button class="product-tab" data-filter="patches">Patches</button>
+            <button class="product-tab" data-filter="vectors">Vectors</button>
+            <button class="product-tab" data-filter="keychains">Keychains</button>
+        </div>
 
-            <div class="product-grid">
-                <div class="product-card" data-category="patches all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Embroidered Patch">
-                        <div class="product-badge">Patches</div>
-                    </div>
-                    <div class="product-info">
+        <div class="product-grid">
+            <div class="product-card" data-category="patches all">
+                <div class="product-img">
+                    <img src="images/patches/0.jpeg" alt="Embroidered Patch">
+                    <div class="product-badge">Patches</div>
+                    <div class="product-overlay">
                         <h3>Embroidered Patches</h3>
                         <p>Premium embroidered patches with intricate detailing and vibrant colors. Perfect for uniforms, bags, and accessories.</p>
-                        <div class="product-meta">
-                            <span class="price">$2.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="patches all">
-                    <div class="product-img">
-                        <img class="img-fluid" src="images/patches/1.jpeg" alt="PVC Patch">
-                        <div class="product-badge">Patches</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="patches all">
+                <div class="product-img">
+                    <img class="img-fluid" src="images/patches/1.jpeg" alt="PVC Patch">
+                    <div class="product-badge">Patches</div>
+                    <div class="product-overlay">
                         <h3>PVC Patches</h3>
                         <p>Durable PVC patches with vibrant colors and 3D effects. Waterproof and perfect for outdoor gear.</p>
-                        <div class="product-meta">
-                            <span class="price">$3.49</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="patches all">
-                    <div class="product-img">
-                        <img src="images/patches/2.jpeg" alt="Leather Patch">
-                        <div class="product-badge">Patches</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="patches all">
+                <div class="product-img">
+                    <img src="images/patches/2.jpeg" alt="Leather Patch">
+                    <div class="product-badge">Patches</div>
+                    <div class="product-overlay">
                         <h3>Leather Patches</h3>
                         <p>Premium leather patches with embossed or debossed designs. Classic look for denim and jackets.</p>
-                        <div class="product-meta">
-                            <span class="price">$4.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="vectors all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Logo Vector">
-                        <div class="product-badge">Vectors</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="vectors all">
+                <div class="product-img">
+                    <img src="images/patches/0.jpeg" alt="Logo Vector">
+                    <div class="product-badge">Vectors</div>
+                    <div class="product-overlay">
                         <h3>Logo Vectors</h3>
                         <p>Professional logo vectorization services. Convert any image to scalable vector format.</p>
-                        <div class="product-meta">
-                            <span class="price">$24.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="vectors all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Illustration Vector">
-                        <div class="product-badge">Vectors</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="vectors all">
+                <div class="product-img">
+                    <img src="images/patches/0.jpeg" alt="Illustration Vector">
+                    <div class="product-badge">Vectors</div>
+                    <div class="product-overlay">
                         <h3>Illustration Vectors</h3>
                         <p>Custom vector illustrations for branding, marketing materials, and digital products.</p>
-                        <div class="product-meta">
-                            <span class="price">$49.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="vectors all">
-                    <div class="product-img">
-                        <img src="images/patches/0.jpeg" alt="Typography Vector">
-                        <div class="product-badge">Vectors</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="vectors all">
+                <div class="product-img">
+                    <img src="images/patches/0.jpeg" alt="Typography Vector">
+                    <div class="product-badge">Vectors</div>
+                    <div class="product-overlay">
                         <h3>Typography Vectors</h3>
                         <p>Custom typography and lettering vectors for unique branding and design projects.</p>
-                        <div class="product-meta">
-                            <span class="price">$34.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="keychains all">
-                    <div class="product-img">
-                        <img src="images/keychains/0.jpeg" alt="Acrylic Keychain">
-                        <div class="product-badge">Keychains</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="keychains all">
+                <div class="product-img">
+                    <img src="images/keychains/0.jpeg" alt="Acrylic Keychain">
+                    <div class="product-badge">Keychains</div>
+                    <div class="product-overlay">
                         <h3>Acrylic Keychains</h3>
                         <p>Vibrant acrylic keychains with full-color printing. Durable and eye-catching.</p>
-                        <div class="product-meta">
-                            <span class="price">$1.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="keychains all">
-                    <div class="product-img">
-                        <img src="images/keychains/3.jpeg" alt="Metal Keychain">
-                        <div class="product-badge">Keychains</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="keychains all">
+                <div class="product-img">
+                    <img src="images/keychains/3.jpeg" alt="Metal Keychain">
+                    <div class="product-badge">Keychains</div>
+                    <div class="product-overlay">
                         <h3>Metal Keychains</h3>
                         <p>Premium metal keychains with engraving or enamel filling. Professional and durable.</p>
-                        <div class="product-meta">
-                            <span class="price">$3.49</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="product-card" data-category="keychains all">
-                    <div class="product-img">
-                        <img src="images/keychains/2.jpeg" alt="Leather Keychain">
-                        <div class="product-badge">Keychains</div>
-                    </div>
-                    <div class="product-info">
+            <div class="product-card" data-category="keychains all">
+                <div class="product-img">
+                    <img src="images/keychains/2.jpeg" alt="Leather Keychain">
+                    <div class="product-badge">Keychains</div>
+                    <div class="product-overlay">
                         <h3>Leather Keychains</h3>
                         <p>Elegant leather keychains with embossing or debossing. Perfect for gifts and branding.</p>
-                        <div class="product-meta">
-                            <span class="price">$4.99</span>
-                            <a href="#" class="btn btn-outline-teal">Customize</a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
