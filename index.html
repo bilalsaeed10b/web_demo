@@ -49,18 +49,18 @@
             transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
         }
 
-        /* Hover effect for dropdown items */
+                /* Hover effect for dropdown items */
         .navbar .dropdown-item:hover {
             background-color: #f8f9fa;   /* Light grey background on hover */
-            color: #089c98;              /* Use your site's teal color for text on hover */
+            color: var(--teal-primary);  /* Use your site's primary teal color for text */
             border-radius: 6px;          /* Slightly rounded corners on the hovered item */
         }
 
         /* Style for the 'active' dropdown item */
         .navbar .dropdown-item.active,
         .navbar .dropdown-item:active {
-            background-color: #13c5b9;   /* Your site's primary teal color */
-            color: #fff;                 /* White text for active item */
+            background-color: var(--teal-primary); /* Your site's primary teal color */
+            color: #fff;                           /* White text for active item */
             border-radius: 6px;
         }
 
@@ -107,19 +107,24 @@
         }
         
         /* Navbar Styles */
+        /* Navbar Styles */
         .navbar {
             padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.95) !important;
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             backdrop-filter: blur(10px);
             transition: all 0.4s;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
-        
+
         .navbar.scrolled {
             padding: 12px 0;
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .navbar-brand {
             font-weight: 800;
             color: var(--teal-primary);
@@ -128,16 +133,16 @@
             display: flex;
             align-items: center;
         }
-        
+
         .navbar-brand img {
             height: 110px;
             margin-right: 10px;
         }
-        
+
         .navbar-brand span {
             color: var(--text-dark);
         }
-        
+
         .nav-link {
             font-weight: 600;
             color: var(--text-dark) !important;
@@ -146,12 +151,12 @@
             position: relative;
             font-size: 1.05rem;
         }
-        
+
         .nav-link:hover {
             color: var(--teal-primary) !important;
         }
-        
-        .nav-link:hover:after {
+
+        .nav-link:hover::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -161,15 +166,78 @@
             background: var(--teal-secondary);
             animation: underline 0.3s ease-out;
         }
-        
+
         @keyframes underline {
             from { width: 0; }
             to { width: 100%; }
         }
-        
+
         .navbar .btn-teal {
             padding: 10px 26px;
             font-size: 0.95rem;
+            background-color: var(--teal-primary);
+            color: white;
+            border-radius: 9999px; /* Tailwind's rounded-full */
+        }
+
+        .dropdown-mega .dropdown-menu {
+            left: 0;
+            right: 0;
+            border-top: none; /* No top border to close the gap */
+            border-radius: 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: visibility 0.3s, opacity 0.3s;
+            visibility: hidden;
+            opacity: 0;
+            display: block; /* We manage visibility with opacity and visibility */
+            margin-top: 0 !important;
+        }
+        .dropdown-mega:hover .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .dropdown-mega h6 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 8px; /* Space for the underline */
+        }
+
+        .dropdown-mega h6::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px; /* Adjust length as needed */
+            height: 3px;
+            background: var(--teal-secondary);
+            border-radius: 2px;
+        }
+
+        /* Colored line below headings */
+        .dropdown-mega h6::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px; /* Adjust length as needed */
+            height: 3px;
+            background: var(--teal-secondary);
+            border-radius: 2px;
+        }
+
+        .dropdown-mega .dropdown-item {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
+            padding-left: 5px;
         }
         
         /* Hero Section */
@@ -947,48 +1015,94 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/main/logo.png" width="" alt="Logo">
-                Sky<span>Stitch</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown">
-                            Products
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="patches.html">Patches</a>
-                            <a class="dropdown-item" href="vectors.html">Vectors</a>
-                            <a class="dropdown-item" href="keychains.html">Keychains</a>
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/main/logo.png" width="" alt="Logo">
+            Sky<span>Stitch</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item dropdown dropdown-mega position-static">
+                    <a class="nav-link dropdown-toggle" href="#" id="megaMenu" aria-expanded="false">
+                        Products
+                    </a>
+                    <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
+                        <div class="container">
+                            <div class="row my-4">
+                                <div class="col-md-6 col-lg-2 mb-3 mb-lg-0">
+                                    <h6 class="text-uppercase fw-bold">Digitizing</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <h6 class="text-uppercase fw-bold">Vectors</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-2 mb-3 mb-md-0">
+                                    <h6 class="text-uppercase fw-bold">Keychain</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-2">
+                                    <h6 class="text-uppercase fw-bold">Patches</h6>
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6 col-lg-2">
+                                    <ul class="list-unstyled">
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 2</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 3</a></li>
+                                        <li><a class="dropdown-item" href="#">Placeholder Link 4</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-                <div class="d-flex mt-3 mt-lg-0">
-                    <a href="#" class="btn btn-teal">Get Quote</a>
-                </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex mt-3 mt-lg-0">
+                <a href="#" class="btn btn-teal">Get Quote</a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="hero">
