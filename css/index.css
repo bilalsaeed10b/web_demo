@@ -31,8 +31,9 @@
             /* Soft shadow for depth */
             padding: 0.5rem 0;
             /* Add some vertical padding */
-            margin-top: 10px !important;
+            margin-top: 0;
             /* Push it slightly down from the 'Products' link */
+            top: 125px; /* Adjust this value to move the dropdown down */
         }
 
         /* Style individual dropdown items */

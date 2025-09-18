@@ -28,7 +28,7 @@
         }
 
         body {
-            zoom: 0.75; /* 90% size */
+             /* 90% size */
             font-family: 'Poppins', sans-serif;
             color: var(--text-dark);
             overflow-x: hidden;
@@ -45,8 +45,9 @@
             /* Soft shadow for depth */
             padding: 0.5rem 0;
             /* Add some vertical padding */
-            margin-top: 10px !important;
+            margin-top: 0;
             /* Push it slightly down from the 'Products' link */
+            top: 125px; /* Adjust this value to move the dropdown down */
         }
 
         /* Style individual dropdown items */
@@ -1019,7 +1020,7 @@
             100% {
                 transform: translateY(0px);
             }
-        }
+        }  
 
         .floating {
             animation: float 4s ease-in-out infinite;
@@ -1143,7 +1144,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="megaMenu" aria-expanded="false">
                             Products
                         </a>
-                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
+                        <div class="dropdown-menu w-100" aria-labelledby="megaMenu">
                             <div class="container">
                                 <div class="row my-4 justify-content-center">
                                     <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
@@ -1188,7 +1189,9 @@
                                     <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                                         <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
                                         <ul class="list-unstyled text-center">
-                                            <!--  Links here -->
+                                            <li><a class="dropdown-item" href="products_html\vector\logo.html">Logo</a></li>
+                                            <li><a class="dropdown-item" href="products_html\vector\illustration.html">Illustration</a></li>
+                                            <li><a class="dropdown-item" href="products_html\vector\typography.html">Typography</a></li>
                                         </ul>
                                     </div>
                                     
@@ -1384,7 +1387,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
                     <div class="product-card" data-category="digitizing all">
                         <div class="product-img">
-                            <a href="products_html/digitizing/leftchest.html"> <img src="images/patches/0.jpeg" alt="Digitizing"></a>
+                            <a href="products_html/digitizing/cap.html"> <img src="images/patches/0.jpeg" alt="Digitizing"></a>
                             <div class="product-badge">Digitizing</div>
                         </div>
                         <div class="product-info">
