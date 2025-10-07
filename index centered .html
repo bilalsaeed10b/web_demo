@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CustomCrafted | Premium Custom Products</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --teal-primary: #00589b;
+            --teal-secondary: #0068b8;
+            --teal-light: #dbf5ff;
+            --pink-accent: #FFEDF3;
+            --text-dark: #333333;
+            --text-light: #6c757d;
+            --text-glass: #ecececcc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            zoom: 1;
+            /* 90% size */
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+
+        /* Style the main dropdown menu container */
+        .navbar .dropdown-menu {
+            border-radius: 12px;
+            /* Rounded corners for a modern look */
+            border: 1px solid #e9ecef;
+            /* Subtle border */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            /* Soft shadow for depth */
+            padding: 0.5rem 0;
+            /* Add some vertical padding */
+            margin-top: 10px !important;
+            /* Push it slightly down from the 'Products' link */
+        }
+
+        /* Style individual dropdown items */
+        .navbar .dropdown-item {
+            padding: 0.6rem 1.2rem;
+            /* More padding for easier clicking */
+            color: var(--text-dark);
+            /* Darker text color for readability */
+            transition: all 0.2s ease-in-out;
+            /* Smooth transition for hover effects */
+        }
+
+        /* Hover effect for dropdown items */
+        .navbar .dropdown-item:hover {
+            background-color: #f8f9fa;
+            /* Light grey background on hover */
+            color: var(--teal-primary);
+            /* Use your site's primary teal color for text */
+            border-radius: 6px;
+            /* Slightly rounded corners on the hovered item */
+        }
+
+        /* Style for the 'active' dropdown item */
+        .navbar .dropdown-item.active,
+        .navbar .dropdown-item:active {
+            background-color: var(--teal-primary);
+            /* Your site's primary teal color */
+            color: #fff;
+            /* White text for active item */
+            border-radius: 6px;
+        }
+
+        /* Custom Buttons */
+        .btn-teal {
+            background-color: var(--teal-primary);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            box-shadow: 0 6px 15px rgba(10, 186, 181, 0.3);
+        }
+
+        .btn-teal:hover {
+            background-color: #089c98;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(10, 186, 181, 0.4);
+        }
+
+        .btn-outline-teal {
+            background-color: transparent;
+            color: var(--teal-primary);
+            border: 2px solid var(--teal-primary);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+
+        .btn-outline-teal:hover {
+            background-color: var(--teal-primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(10, 186, 181, 0.3);
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 12px 0;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--teal-primary);
+            font-size: 28px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 110px;
+            margin-right: 10px;
+        }
+
+        .navbar-brand span {
+            color: var(--text-dark);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-dark) !important;
+            margin: 0 12px;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .nav-link:hover {
+            color: var(--teal-primary) !important;
+        }
+
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--teal-secondary);
+            animation: underline 0.3s ease-out;
+        }
+
+        @keyframes underline {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        .animated-heading {
+            color: black;
+            font-weight: 700;
+            display: inline-block;
+            line-height: 1.2;
+        }
+
+        .word {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .char {
+            display: inline-block;
+            transition: color 0.25s ease, transform 0.25s ease;
+        }
+
+        .char.active {
+            color: #00589b;
+            transform: scale(1.2);
+        }
+
+        .navbar .btn-teal {
+            padding: 10px 26px;
+            font-size: 0.95rem;
+            background-color: var(--teal-primary);
+            color: white;
+            border-radius: 9999px;
+            /* Tailwind's rounded-full */
+        }
+
+        .dropdown-mega .dropdown-menu {
+            left: 0;
+            right: 0;
+            border-top: none;
+            /* No top border to close the gap */
+            border-radius: 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: visibility 0.3s, opacity 0.3s;
+            visibility: hidden;
+            opacity: 0;
+            display: block;
+            /* We manage visibility with opacity and visibility */
+            margin-top: 0 !important;
+        }
+
+        .dropdown-mega:hover .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .dropdown-mega h6 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 8px;
+            /* Space for the underline */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        /* Colored line below headings */
+        .dropdown-mega h6::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            /* Center the underline */
+            transform: translateX(-50%);
+            /* Adjust for perfect centering */
+            width: 50px;
+            /* Adjust length as needed */
+            height: 3px;
+            background: var(--teal-secondary);
+            border-radius: 2px;
+        }
+
+        /* Fix the parent list items to contain the clickable area */
+        .dropdown-mega .list-unstyled {
+            display: flex;
+            flex-direction: column;
+
+            /* This centers the items horizontally */
+
+            /* This ensures the list only takes up necessary width */
+
+            /* This centers the list on the page */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        .dropdown-mega .list-unstyled li {
+
+            list-style: none;
+            /* Remove bullet points */
+        }
+
+        /* Style the links themselves */
+        .dropdown-mega .dropdown-item {
+            display: block;
+            padding: 0.5rem 1.2rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            white-space: nowrap;
+            /* Prevents wrapping if link text is long */
+            width: 100%;
+            /* Ensures the link takes the full width of the li */
+        }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
+        }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--teal-light) 30%, var(--pink-accent) 110%);
+            color: rgb(8, 8, 8);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 1s ease-in-out, transform 4s ease-in-out;
+            transform: scale(1);
+        }
+
+        .zoom-effect {
+            transform: scale(1.1);
+        }
+
+        .hero-btn {
+            background-color: #d12a2a;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .hero-btn:hover {
+            background-color: #b62222;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-weight: 800;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title:after {
+            content: '';
+            width: 100px;
+            height: 5px;
+            background: var(--teal-secondary);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 20px;
+            transition: all 0.4s;
+            margin-bottom: 30px;
+            height: 100%;
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: transparent;
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--pink-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--teal-primary);
+            font-size: 36px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--teal-light) 0%, white 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .product-tab {
+            padding: 15px 30px;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            margin: 0 10px 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-tab.active,
+        .product-tab:hover {
+            background: var(--teal-primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(10, 186, 181, 0.3);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            background: white;
+            transition: all 0.4s;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--teal-primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* CSS to hide the cards */
+        .product-card.hidden {
+            display: none;
+        }
+
+        /* CSS to hide the parent column, allowing the grid to reflow */
+        .hidden {
+            display: none;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .price {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--teal-primary);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .process-container {
+            position: relative;
+        }
+
+        .process-line {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--teal-light);
+            z-index: 0;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-step {
+            text-align: center;
+            width: 23%;
+        }
+
+        .step-icon {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border: 4px solid var(--teal-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--teal-primary);
+            font-size: 40px;
+            transition: all 0.4s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-step:hover .step-icon {
+            background: var(--teal-primary);
+            color: white;
+            transform: scale(1.1);
+            border-color: var(--teal-primary);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: var(--teal-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .process-step h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--teal-light) 0%, var(--pink-accent) 100%);
+        }
+
+        .testimonial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            margin: 30px 20px;
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 70px;
+            color: var(--teal-light);
+            opacity: 0.3;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 3px solid var(--teal-light);
+        }
+
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .client-info h4 {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .client-info p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--teal-light);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background: white;
+            padding: 20px 25px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .faq-answer.active {
+            padding: 20px 25px;
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 120px 0;
+            background: #06365A;
+            background-size: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta:before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            top: -150px;
+            right: -150px;
+        }
+
+        .cta:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-weight: 800;
+            font-size: 3.2rem;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            opacity: 0.9;
+        }
+
+        .cta .btn {
+            padding: 18px 45px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .embroidery-section {
+            position: relative;
+            padding: 140px 0;
+            background: linear-gradient(135deg, #003459, #00589b);
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Decorative circles */
+        .embroidery-section::before,
+        .embroidery-section::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            z-index: 1;
+            transition: all 0.6s ease;
+        }
+
+        .embroidery-section::before {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -150px;
+        }
+
+        .embroidery-section::after {
+            width: 300px;
+            height: 300px;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        /* Content */
+        .embroidery-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .embroidery-content h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .embroidery-content p {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Subtle floating animation for background shapes */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-20px) scale(1.05);
+            }
+        }
+
+        .embroidery-section::before {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .embroidery-section::after {
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-glass);
+            color: rgb(41, 41, 41);
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal-primary), var(--teal-secondary));
+        }
+
+        .footer h5 {
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            font-size: 1.3rem;
+        }
+
+        .footer h5:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--teal-secondary);
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer ul li a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .footer ul li a:hover {
+            color: var(--teal-secondary);
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #00589b;
+            border-radius: 50%;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--teal-primary);
+            transform: translateY(-5px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background: var(--teal-primary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 50px 50px 0;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--teal-secondary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--teal-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--teal-secondary);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1199px) {
+            .hero h1 {
+                font-size: 3.3rem;
+            }
+
+            .process-steps {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .process-step {
+                width: 48%;
+                margin-bottom: 40px;
+            }
+
+            .process-line {
+                display: none;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+            }
+
+            .features,
+            .products,
+            .process,
+            .testimonials,
+            .cta {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                width: 100%;
+            }
+
+            .cta h2 {
+                font-size: 2.5rem;
+            }
+
+            .cta p {
+                font-size: 1.1rem;
+            }
+
+            .footer .col-md-6 {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .feature-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/main/logo.png" width="" alt="Logo">
+                Sky<span>Stitch</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown dropdown-mega position-static">
+                        <a class="nav-link dropdown-toggle" href="#" id="megaMenu" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu w-100 mt-0" aria-labelledby="megaMenu">
+                            <div class="container">
+                                <div class="row my-4 justify-content-center">
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <h6 class="text-uppercase fw-bold">Patches</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-6">
+                                                <ul class="list-unstyled ">
+                                                    <li><a class="dropdown-item"
+                                                            href="products_html\patches\embroidery.html">Embroidery</a>
+                                                    </li>
+                                                    <li><a class="dropdown-item"
+                                                            href="products_html\patches\chenille.html">Chenille</a></li>
+                                                    <li><a class="dropdown-item"
+                                                            href="products_html\patches\leather.html">Leather</a></li>
+                                                    <li><a class="dropdown-item"
+                                                            href="products_html\patches\pvc.html">PVC</a></li>
+                                                    <li><a class="dropdown-item"
+                                                            href="products_html\patches\woven.html">Woven</a></li>
+                                                    <li><a class="dropdown-item"
+                                                            href="products_html\patches\pins.html">PINs</a></li>
+                                                    <li><a class="dropdown-item"
+                                                            href="products_html\patches\sublimation.html">Sublimation</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Digitizing</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item"
+                                                    href="products_html\digitizing\leftchest.html">Left Chest</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="products_html\digitizing\cap.html">Cap</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="products_html\digitizing\jacketback.html">Jacket Back</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item"
+                                                    href="products_html\keychain\embroidery.html">Embroidery</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="products_html\keychain\leather.html">Leather</a></li>
+                                            <li><a class="dropdown-item" href="products_html\keychain\pvc.html">PVC</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                        <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
+                                        <ul class="list-unstyled text-center">
+                                            <li><a class="dropdown-item" href="../vector\logo.html">Logo</a></li>
+                                            <li><a class="dropdown-item"
+                                                    href="../vector\illustration.html">Illustration</a></li>
+                                            <li><a class="dropdown-item" href="../vector\typography.html">Typography</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="../vector\typography.html">AI Color
+                                                    Separation</a></li>
+                                            <li><a class="dropdown-item" href="../vector\typography.html">JPEG to AI
+                                                    Conversion</a></li>
+                                            <li><a class="dropdown-item" href="../vector\typography.html">Photoshop
+                                                    Separation</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact_us.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-teal">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section text-center py-5">
+  <div class="container">
+    <!-- Image on Top -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <img src="images/main/banner1.png" alt="Custom Emblems" class="hero-img img-fluid mb-4">
+      </div>
+    </div>
+
+    <!-- Text Below -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8 px-4">
+        <h1 class="fw-bold display-5 animated-heading">
+          Premium Custom Emblems. Fast Turnaround.
+        </h1>
+        <p class="mt-3 fs-5">
+          Your one-stop shop for premium custom emblems, made with care and efficiency.
+        </p>
+        <button class="btn btn-teal mt-3">Get Started</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2 class=" fade-up">Our Products</h2>
+                <p class="fade-up">Explore our premium custom product collections</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="product-tabs mb-4 text-center">
+                <button class="product-tab active fade-up" data-filter="all">All Products</button>
+                <button class="product-tab fade-up " data-filter="patches">Patches</button>
+                <button class="product-tab fade-up " data-filter="digitizing">Digitizing</button>
+                <button class="product-tab fade-up" data-filter="keychains">Keychains</button>
+                <button class="product-tab fade-up" data-filter="vectors">Vectors</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="row g-4">
+
+                <!-- Patches -->
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/patches/embroidery.html"><img src="images/patches/0.jpeg"
+                                    alt="Embroidered Patch"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Embroidery</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/patches/chenille.html"><img src="images/patches/1.jpeg"
+                                    alt="chenille Patch"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Chenille</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/patches/leather.html"><img src="images/patches/2.jpeg"
+                                    alt="Leather Patch"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Leather</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/patches/pvc.html"><img src="images/patches/2.jpeg"
+                                    alt="Leather Patch"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>PVC</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/patches/woven.html"> <img src="images/patches/2.jpeg"
+                                    alt="Leather Patch"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Woven</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/patches/pins.html"> <img src="images/patches/2.jpeg"
+                                    alt="Leather Patch"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>PINs</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/patches/sublimation.html"> <img src="images/patches/2.jpeg"
+                                    alt="Leather Patch"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Sublimation</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digitizing -->
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="digitizing all">
+                        <div class="product-img">
+                            <a href="products_html/digitizing/leftchest.html"> <img src="images/patches/0.jpeg"
+                                    alt="Digitizing"></a>
+                            <div class="product-badge">Digitizing</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Left Chest</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="digitizing all">
+                        <div class="product-img">
+                            <a href="products_html/digitizing/cap.html"> <img src="images/patches/0.jpeg"
+                                    alt="Digitizing"></a>
+                            <div class="product-badge">Digitizing</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Cap</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="digitizing all">
+                        <div class="product-img">
+                            <a href="products_html/digitizing/jacketback.html"> <img src="images/patches/0.jpeg"
+                                    alt="Digitizing"></a>
+                            <div class="product-badge">Digitizing</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Jacket Back</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keychains -->
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <a href="products_html/keychain/embroidery.html"> <img src="images/keychains/0.jpeg"
+                                    alt="Acrylic Keychain"></a>
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Embroidery</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <a href="products_html/keychain/leather.html"> <img src="images/keychains/3.jpeg"
+                                    alt="Metal Keychain"></a>
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Leather</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="keychains all">
+                        <div class="product-img">
+                            <a href="products_html/keychain/pvc.html"> <img src="images/keychains/2.jpeg"
+                                    alt="Leather Keychain"></a>
+                            <div class="product-badge">Keychains</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>PVC</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vectors -->
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="vectors all">
+                        <div class="product-img">
+                            <a href="#"> <img src="images/patches/0.jpeg" alt="Logo Vector"></a>
+                            <div class="product-badge">Vectors</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Logo Vectors</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="vectors all">
+                        <div class="product-img">
+                            <a href="#"> <img src="images/patches/0.jpeg" alt="Illustration Vector"></a>
+                            <div class="product-badge">Vectors</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Illustration Vectors</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="vectors all">
+                        <div class="product-img">
+                            <a href="#"> <img src="images/patches/0.jpeg" alt="Typography Vector"></a>
+                            <div class="product-badge">Vectors</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Typography Vectors</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-up">Why Choose Us</h2>
+                <p class="fade-up">We combine premium craftsmanship with exceptional service to bring your ideas to life
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 ">
+                    <div class="feature-card fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Lightning Fast Turnaround</h3>
+                        <p>Receive your custom products in as little as 3 business days with our express production
+                            service.</p>
+                        <a href="#" class="btn btn-outline-teal">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Free Design Assistance</h3>
+                        <p>Our expert designers will perfect your artwork at no extra cost for stunning results.</p>
+                        <a href="#" class="btn btn-outline-teal">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Premium Quality Materials</h3>
+                        <p>We use only the highest quality materials and advanced manufacturing techniques.</p>
+                        <a href="#" class="btn btn-outline-teal">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-up">Our Simple Process</h2>
+                <p class="fade-up">Four easy steps to get your custom products</p>
+            </div>
+
+            <div class="process-container">
+                <div class="process-line"></div>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-icon fade-up">
+                            <i class="fas fa-pencil-alt"></i>
+                            <div class="step-number">1</div>
+                        </div>
+                        <h3 class="fade-up">Design</h3>
+                        <p class="fade-up>Upload your design or collaborate with our experts to create your perfect product.</p>
+                    </div>
+                    <div class=" process-step">
+                        <div class="step-icon fade-up">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <div class="step-number">2</div>
+                        </div>
+                        <h3 class="fade-up">Quote</h3>
+                        <p class="fade-up">Receive an instant quote based on your specifications with no hidden fees.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon fade-up">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="step-number">3</div>
+                        </div>
+                        <h3 class="fade-up">Approve</h3>
+                        <p class="fade-up">Review and approve your digital proof before we move to production.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon fade-up">
+                            <i class="fas fa-truck"></i>
+                            <div class="step-number">4</div>
+                        </div>
+                        <h3 class="fade-up">Receive</h3>
+                        <p class="fade-up">Get your custom products delivered to your doorstep with fast shipping.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-up">Customer Reviews</h2>
+                <p class="fade-up">What our clients say about our products and service</p>
+            </div>
+
+            <div class="">
+                <div class="row">
+                    <div class="col-md-4 skew-zoom">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-header">
+                                <div class="client-img">
+                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%2356DFCF'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,85 70,70' stroke='white' stroke-width='3' fill='none'/></svg>"
+                                        alt="Client">
+                                </div>
+                                <div class="client-info">
+                                    <h4>Sarah Johnson</h4>
+                                    <p>Marketing Director</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"The custom patches we ordered exceeded our expectations! The quality is exceptional and
+                                the turnaround time was faster than promised. Will definitely order again!"</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 skew-zoom">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-header">
+                                <div class="client-img">
+                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230ABAB5'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,55 70,70' stroke='white' stroke-width='3' fill='none'/></svg>"
+                                        alt="Client">
+                                </div>
+                                <div class="client-info">
+                                    <h4>Michael Chen</h4>
+                                    <p>Small Business Owner</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"I needed custom keychains for a last-minute event. Not only did they deliver in record
+                                time, but the quality was outstanding. The free design help was a lifesaver!"</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 skew-zoom">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-header">
+                                <div class="client-img">
+                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23ADEED9'/><circle cx='35' cy='40' r='5' fill='white'/><circle cx='65' cy='40' r='5' fill='white'/><path d='M30,70 Q50,85 70,70' stroke='white' stroke-width='3' fill='none'/></svg>"
+                                        alt="Client">
+                                </div>
+                                <div class="client-info">
+                                    <h4>Emma Rodriguez</h4>
+                                    <p>Event Planner</p>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>"Our nonprofit ordered embroidered patches for volunteers. The no minimum order policy
+                                allowed us to start small and the pricing was very reasonable. Highly recommend!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our custom patches</p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="faq-item fade-up">
+                        <div class="faq-question">
+                            What's the minimum order quantity?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We have no minimum order requirements! You can order as few as one patch. Whether you
+                                need a single custom patch or thousands, we can accommodate your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up">
+                        <div class="faq-question">
+                            How long does production take?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Standard production time is 7-10 business days. We also offer rush production options
+                                that can reduce turnaround to as little as 3 business days for most orders.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up">
+                        <div class="faq-question">
+                            What file formats do you accept?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept all common file formats including AI, EPS, PDF, PSD, PNG, and JPG. For best
+                                results, vector files (AI, EPS) are preferred. Our design team can help with file
+                                conversion if needed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="faq-item fade-up">
+                        <div class="faq-question">
+                            Can you help with design?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our design team offers free design assistance. Send us your ideas, sketches,
+                                or concepts and we'll create professional patch artwork at no extra cost.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up">
+                        <div class="faq-question">
+                            What's the maximum size for patches?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We can create patches up to 12 inches in any dimension. For larger sizes, we recommend
+                                our PVC or sublimation options which maintain quality at larger dimensions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item fade-up">
+                        <div class="faq-question">
+                            Do you offer international shipping?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we ship worldwide. We offer several shipping options including standard
+                                international mail, DHL, and FedEx. Shipping costs and times vary by destination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Something Amazing?</h2>
+                <p>Get started with a free quote today. No obligation, just expert advice on your custom product needs.
+                </p>
+                <a href="#" class="btn btn-light">Get Your Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-5 mb-lg-0">
+                    <h3 class="navbar-brand  mb-4"><img src="images/main/logo.png" alt="Logo"> Sky<span>Stitch</span>
+                    </h3>
+                    <p class="mb-4">Creating premium custom products with exceptional quality, fast turnaround, and
+                        outstanding customer service since 2015.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+                    <h5>Products</h5>
+                    <ul>
+                        <li><a href="#">Patches</a></li>
+                        <li><a href="#">Digitizing</a></li>
+                        <li><a href="#">Keychains</a></li>
+                        <li><a href="#">Vectors</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-5 mb-md-0">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="contact_us.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to get special offers, free design resources, and updates.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <div class="mt-4">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 123 Design Street, Creative City</li>
+                            <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@customcrafted.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CustomCrafted. All rights reserved. | Designed with <i
+                        class="fas fa-heart text-danger"></i> for creators worldwide</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/main.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 500) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Tab functionality
+        const tabs = document.querySelectorAll('.product-tab');
+        const productCards = document.querySelectorAll('.product-card');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove 'active' class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add 'active' class to the clicked tab
+                tab.classList.add('active');
+
+                // Get the filter category from the data-filter attribute
+                const filter = tab.getAttribute('data-filter');
+
+                // Loop through all product cards
+                productCards.forEach(card => {
+                    // Get the card's categories from the data-category attribute
+                    const categories = card.getAttribute('data-category').split(' ');
+
+                    // Check if the card's categories include the filter category
+                    if (filter === 'all' || categories.includes(filter)) {
+                        // Show the parent column by removing the 'hidden' class
+                        card.parentElement.classList.remove('hidden');
+                    } else {
+                        // Hide the parent column by adding the 'hidden' class
+                        card.parentElement.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+
+                const icon = question.querySelector('i');
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const heroImg = document.querySelector(".hero-img");
+            const images = [
+                "images/main/banner1.png",
+                "images/main/banner2.png",
+                "images/main/banner3.png"
+            ];
+            let index = 0;
+
+            setInterval(() => {
+                heroImg.classList.toggle("zoom-effect");
+                heroImg.style.opacity = 0;
+                setTimeout(() => {
+                    index = (index + 1) % images.length;
+                    heroImg.src = images[index];
+                    heroImg.style.opacity = 1;
+                }, 1000);
+            }, 5000);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const heading = document.querySelector(".animated-heading");
+            const words = heading.textContent.trim().split(" ");
+            heading.innerHTML = "";
+
+            // Create spans for each word and letter
+            words.forEach((word, wIndex) => {
+                const wordSpan = document.createElement("span");
+                wordSpan.classList.add("word");
+                [...word].forEach((char) => {
+                    const charSpan = document.createElement("span");
+                    charSpan.classList.add("char");
+                    charSpan.textContent = char;
+                    wordSpan.appendChild(charSpan);
+                });
+                heading.appendChild(wordSpan);
+            });
+
+            const wordSpans = document.querySelectorAll(".word");
+            let currentWord = 0;
+            let currentLetter = 0;
+
+            function animateWord() {
+                const chars = wordSpans[currentWord].querySelectorAll(".char");
+
+                if (currentLetter < chars.length) {
+                    chars[currentLetter].classList.add("active");
+                    currentLetter++;
+                    setTimeout(animateWord, 100);
+                } else {
+                    // Reset previous word after delay
+                    setTimeout(() => {
+                        chars.forEach((c) => c.classList.remove("active"));
+                        currentWord = (currentWord + 1) % wordSpans.length;
+                        currentLetter = 0;
+                        animateWord();
+                    }, 500);
+                }
+            }
+
+            animateWord();
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Three-image Hero Switcher — Autoplay</title>
+<style>
+  :root{
+    --width: 1100px;
+    --height: 480px;
+    --gap: 24px;
+    --side-scale: 0.58;
+    --side-opacity: 0.2;
+    --transition: 500ms cubic-bezier(.2,.9,.3,1);
+    --autoplay-interval: 3000ms;
+  }
+
+  body{ font-family: Inter, system-ui, Arial; margin:0; background: linear-gradient(90deg,#e8f8ff 0%, #f7eef4 100%); display:flex; justify-content:center; padding:40px; }
+
+  .hero-wrap{ width:100%; max-width:var(--width); }
+  .hero-switcher{
+    position:relative;
+    height:var(--height);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    perspective:1200px;
+    overflow:visible;
+    outline: none;
+  }
+
+  .carousel-stage{
+    position:relative;
+    width:100%;
+    height:100%;
+    pointer-events:none; /* allow clicks only on images */
+  }
+
+  .cardHero{
+    --cardHero-w: calc(var(--height) * 0.9); /* square-ish cardHero */
+    --cardHero-h: 100%;
+    width: calc(45%); /* fallback; transforms control visual size */
+    max-width: 700px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform-origin:center center;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform var(--transition), opacity var(--transition), left var(--transition), right var(--transition), z-index var(--transition);
+    border-radius: 14px;
+    overflow: hidden;
+    pointer-events:auto;
+    user-select:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .cardHero img{ display:block; width:100%; height:100%; object-fit:contain; }
+
+  /* positions: left, active (center), right */
+  .cardHero.left{
+    transform: translate(calc(-50% - 260px), -50%) scale(var(--side-scale));
+    opacity: var(--side-opacity);
+    z-index: 5;
+    filter: none;
+  }
+
+  .cardHero.right{
+    transform: translate(calc(-50% + 260px), -50%) scale(var(--side-scale));
+    opacity: var(--side-opacity);
+    z-index: 5;
+  }
+
+  .cardHero.active{
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 10;
+  }
+
+  /* small tilt for depth */
+  .cardHero.left img{ transform: rotateY(12deg); transition: transform var(--transition); }
+  .cardHero.right img{ transform: rotateY(-12deg); transition: transform var(--transition); }
+  .cardHero.active img{ transform: rotateY(0); }
+
+  /* make cards smaller on narrow screens and reduce offset */
+  @media (max-width: 900px){
+    :root{ --height: 380px; }
+    .cardHero.left, .cardHero.right{ transform: translate(calc(-50% - 160px), -50%) scale(var(--side-scale)); }
+    .cardHero{ width: 70%; }
+  }
+
+  @media (max-width: 520px){
+    :root{ --height: 320px; }
+    .cardHero{ width: 90%; border-radius: 10px; }
+    .cardHero.left, .cardHero.right{ transform: translate(calc(-50% - 120px), -50%) scale(.58); opacity: var(--side-opacity); }
+  }
+
+  /* Small subtle reflection below active */
+  .reflection{
+    position:absolute;
+    left:50%;
+    bottom: -18px;
+    width: 60%;
+    height: 40px;
+    transform: translateX(-50%);
+    z-index:1;
+    filter: blur(10px);
+    opacity:0.07;
+    background: linear-gradient(180deg, rgba(0,0,0,0.12), transparent);
+    border-radius: 50%;
+    pointer-events:none;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-wrap">
+  <div class="hero-switcher" id="heroSwitcher" tabindex="0" aria-roledescription="carousel" aria-label="Product hero switcher">
+    <div class="carousel-stage" id="stage" aria-live="polite" aria-atomic="true">
+      <!-- three cards -->
+      <div class="cardHero" data-index="0" id="cardHero-0" role="button" aria-label="Banner 1">
+        <img src="images/main/banner1.png" alt="Banner 1">
+      </div>
+      <div class="cardHero" data-index="1" id="cardHero-1" role="button" aria-label="Banner 2">
+        <img src="images/main/banner2.png" alt="Banner 2">
+      </div>
+      <div class="cardHero" data-index="2" id="cardHero-2" role="button" aria-label="Banner 3">
+        <img src="images/main/banner3.png" alt="Banner 3">
+      </div>
+
+      <div class="reflection" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const count = 3;
+  let active = 0;
+  const cards = [];
+  for (let i=0;i<count;i++){
+    cards.push(document.getElementById('cardHero-'+i));
+  }
+
+  function applyPositions(){
+    // positions: left, center, right (circular)
+    for (let i=0;i<count;i++){
+      cards[i].classList.remove('left','right','active');
+    }
+    const leftIdx = (active - 1 + count) % count;
+    const rightIdx = (active + 1) % count;
+
+    cards[active].classList.add('active');
+    cards[leftIdx].classList.add('left');
+    cards[rightIdx].classList.add('right');
+  }
+
+  function show(index){
+    active = ((index % count) + count) % count;
+    applyPositions();
+  }
+
+  // initialize
+  applyPositions();
+
+  // click on cards => bring to front (or advance if active clicked)
+  cards.forEach((c, i) => {
+    c.addEventListener('click', (e) => {
+      if (!c.classList.contains('active')) show(i);
+      else show(i+1); // active click advances
+    });
+  });
+
+  // keyboard
+  window.addEventListener('keydown', (e)=>{
+    if (e.key === 'ArrowLeft') show(active-1);
+    if (e.key === 'ArrowRight') show(active+1);
+  });
+
+  // autoplay (no buttons)
+  let timer = null;
+  const interval = 3000; // ms
+
+  function startAutoplay(){
+    stopAutoplay();
+    timer = setInterval(()=> show(active+1), interval);
+  }
+  function stopAutoplay(){
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  // pause on hover/focus for better UX and accessibility
+  const hero = document.getElementById('heroSwitcher');
+  hero.addEventListener('mouseenter', stopAutoplay);
+  hero.addEventListener('mouseleave', startAutoplay);
+  hero.addEventListener('focusin', stopAutoplay);
+  hero.addEventListener('focusout', startAutoplay);
+
+  // start autoplay immediately
+  startAutoplay();
+
+  // simple swipe support for touch devices
+  (function addSwipe(el){
+    let startX = 0;
+    let startY = 0;
+    let threshold = 30;
+    el.addEventListener('touchstart', (e)=> {
+      const t = e.changedTouches[0];
+      startX = t.screenX; startY = t.screenY;
+      stopAutoplay(); // pause while interacting
+    }, {passive:true});
+    el.addEventListener('touchend', (e)=> {
+      const t = e.changedTouches[0];
+      const dx = t.screenX - startX;
+      const dy = t.screenY - startY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > threshold){
+        if (dx > 0) show(active-1); else show(active+1);
+      }
+      startAutoplay();
+    }, {passive:true});
+  })(document.querySelector('.carousel-stage'));
+
+})();
+</script>
+
+</body>
+</html>
