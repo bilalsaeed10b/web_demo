@@ -43,21 +43,21 @@ document.querySelectorAll('[data-box]').forEach(box => {
     });
 });
 
-// // GSAP Fade Up Animation
-// document.querySelectorAll('.fade-up').forEach(el => {
-//     gsap.from(el, {
-//         opacity: 0,
-//         y: 40,
-//         duration: 0.4,
-//         ease: "power2.in",
-//         scrollTrigger: {
-//             trigger: el,
-//             start: "top 110%",
-//             toggleActions: "play reverse play reverse",
-//             once:false,
-//         }
-//     });
-// });
+// GSAP Fade Up Animation
+document.querySelectorAll('.fade-up').forEach(el => {
+    gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 0.4,
+        ease: "power2.in",
+        scrollTrigger: {
+            trigger: el,
+            start: "top 110%",
+            toggleActions: "play reverse play reverse",
+            once:false,
+        }
+    });
+});
 
 
 // GSAP skewed zoom Animation with staggered buttons
