@@ -44,67 +44,67 @@ document.querySelectorAll('[data-box]').forEach(box => {
 });
 
 
-// GSAP Fade Up Animation (existing code - make sure GSAP is loaded before this script)
-document.querySelectorAll('.fade-up').forEach(el => {
-    gsap.from(el, {
-        opacity: 0,
-        y: 40,
-        duration: 0.4,
-        ease: "power2.in",
-        scrollTrigger: {
-            trigger: el,
-            start: "top 110%",
-            toggleActions: "play reverse play reverse",
-            once: false,
-        }
-    });
-});
+// // GSAP Fade Up Animation (existing code - make sure GSAP is loaded before this script)
+// document.querySelectorAll('.fade-up').forEach(el => {
+//     gsap.from(el, {
+//         opacity: 0,
+//         y: 40,
+//         duration: 0.4,
+//         ease: "power2.in",
+//         scrollTrigger: {
+//             trigger: el,
+//             start: "top 110%",
+//             toggleActions: "play reverse play reverse",
+//             once: false,
+//         }
+//     });
+// });
 
-// Select all buttons with the 'data-filter' attribute
-const filterButtons = document.querySelectorAll('[data-filter]');
+// // Select all buttons with the 'data-filter' attribute
+// const filterButtons = document.querySelectorAll('[data-filter]');
 
-// Select all product cards. Each card is a 'div.col-lg-3' that contains a 'product-card'.
-// We want to filter these outer 'col' divs because they are the elements with the 'fade-up' class
-// and contain the 'data-category' attribute on their child 'product-card'.
-// We'll target the parent 'col' div that wraps each 'product-card'.
-const productCols = document.querySelectorAll('.row.g-4 > div.col-lg-3, .row.g-4 > div.col-md-4, .row.g-4 > div.col-sm-6');
+// // Select all product cards. Each card is a 'div.col-lg-3' that contains a 'product-card'.
+// // We want to filter these outer 'col' divs because they are the elements with the 'fade-up' class
+// // and contain the 'data-category' attribute on their child 'product-card'.
+// // We'll target the parent 'col' div that wraps each 'product-card'.
+// const productCols = document.querySelectorAll('.row.g-4 > div.col-lg-3, .row.g-4 > div.col-md-4, .row.g-4 > div.col-sm-6');
 
-// Loop through each filter button
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove 'active' class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Add 'active' class to the clicked button
-        button.classList.add('active');
+// // Loop through each filter button
+// filterButtons.forEach(button => {
+//     button.addEventListener('click', () => {
+//         // Remove 'active' class from all buttons
+//         filterButtons.forEach(btn => btn.classList.remove('active'));
+//         // Add 'active' class to the clicked button
+//         button.classList.add('active');
 
-        // Get the filter value from the 'data-filter' attribute
-        const filterValue = button.dataset.filter;
+//         // Get the filter value from the 'data-filter' attribute
+//         const filterValue = button.dataset.filter;
 
-        // Loop through all product column items to filter them
-        productCols.forEach(col => {
-            // Get the product's categories from its child 'product-card's 'data-category' attribute.
-            // Split by space to handle multiple categories (e.g., "patches all").
-            const productCard = col.querySelector('.product-card');
-            const productCategories = productCard ? productCard.dataset.category.split(' ') : [];
+//         // Loop through all product column items to filter them
+//         productCols.forEach(col => {
+//             // Get the product's categories from its child 'product-card's 'data-category' attribute.
+//             // Split by space to handle multiple categories (e.g., "patches all").
+//             const productCard = col.querySelector('.product-card');
+//             const productCategories = productCard ? productCard.dataset.category.split(' ') : [];
 
-            // Check if the current filterValue is 'all' or if the product's categories include the filterValue
-            if (filterValue === 'all' || productCategories.includes(filterValue)) {
-                // Show the product column
-                col.style.display = 'block'; // Bootstrap columns typically use 'block'
+//             // Check if the current filterValue is 'all' or if the product's categories include the filterValue
+//             if (filterValue === 'all' || productCategories.includes(filterValue)) {
+//                 // Show the product column
+//                 col.style.display = 'block'; // Bootstrap columns typically use 'block'
 
-                // Apply GSAP fade up animation to the newly displayed product column
-                // Ensure it animates from hidden to visible
-                gsap.fromTo(col,
-                    { opacity: 0, y: 40 }, // From state
-                    { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" } // To state
-                );
-            } else {
-                // Hide the product column
-                col.style.display = 'none';
-            }
-        });
-    });
-});
+//                 // Apply GSAP fade up animation to the newly displayed product column
+//                 // Ensure it animates from hidden to visible
+//                 gsap.fromTo(col,
+//                     { opacity: 0, y: 40 }, // From state
+//                     { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" } // To state
+//                 );
+//             } else {
+//                 // Hide the product column
+//                 col.style.display = 'none';
+//             }
+//         });
+//     });
+// });
 
 
 // GSAP skewed zoom Animation with staggered buttons
