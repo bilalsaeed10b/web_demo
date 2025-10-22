@@ -186,6 +186,115 @@
             background: var(--teal-secondary);
             animation: underline 0.3s ease-out;
         }
+        .navbar .btn-teal {
+            padding: 10px 26px;
+            font-size: 0.95rem;
+            background-color: var(--teal-primary);
+            color: white;
+            border-radius: 9999px;
+            /* Tailwind's rounded-full */
+        }
+
+        .dropdown-mega .dropdown-menu {
+            left: 0;
+            right: 0;
+            border-top: none;
+            /* No top border to close the gap */
+            border-radius: 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: visibility 0.3s, opacity 0.3s;
+            visibility: hidden;
+            opacity: 0;
+            display: block;
+            /* We manage visibility with opacity and visibility */
+            margin-top: 0 !important;
+        }
+
+        .dropdown-mega:hover .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .dropdown-mega h6 {
+            color: var(--teal-primary);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 8px;
+            /* Space for the underline */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        /* Colored line below headings */
+        .dropdown-mega h6::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            /* Center the underline */
+            transform: translateX(-50%);
+            /* Adjust for perfect centering */
+            width: 50px;
+            /* Adjust length as needed */
+            height: 3px;
+            background: var(--teal-secondary);
+            border-radius: 2px;
+        }
+
+        /* Fix the parent list items to contain the clickable area */
+        .dropdown-mega .list-unstyled {
+            display: flex;
+            flex-direction: column;
+
+            /* This centers the items horizontally */
+
+            /* This ensures the list only takes up necessary width */
+
+            /* This centers the list on the page */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        .dropdown-mega .list-unstyled li {
+
+            list-style: none;
+            /* Remove bullet points */
+        }
+
+        /* Style the links themselves */
+        .dropdown-mega .dropdown-item {
+            display: block;
+            padding: 0.5rem 1.2rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            white-space: nowrap;
+            /* Prevents wrapping if link text is long */
+            width: 100%;
+            /* Ensures the link takes the full width of the li */
+        }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
+        }
+
+        .dropdown-mega .dropdown-item:hover {
+            color: var(--teal-primary);
+            background-color: transparent;
+        }
+
+        /* Fix mobile navbar scroll issue */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                max-height: 80vh; /* limit dropdown height */
+                overflow-y: auto; /* allow scrolling */
+                background: rgba(255, 255, 255, 0.98); /* optional for better visibility */
+                padding-bottom: 1rem;
+            }
+        }
+
 
         @keyframes underline {
             from {
@@ -358,104 +467,7 @@
             transform: scale(1.2);
         }
 
-        .navbar .btn-teal {
-            padding: 10px 26px;
-            font-size: 0.95rem;
-            background-color: var(--teal-primary);
-            color: white;
-            border-radius: 9999px;
-            /* Tailwind's rounded-full */
-        }
-
-        .dropdown-mega .dropdown-menu {
-            left: 0;
-            right: 0;
-            border-top: none;
-            /* No top border to close the gap */
-            border-radius: 0;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transition: visibility 0.3s, opacity 0.3s;
-            visibility: hidden;
-            opacity: 0;
-            display: block;
-            /* We manage visibility with opacity and visibility */
-            margin-top: 0 !important;
-        }
-
-        .dropdown-mega:hover .dropdown-menu {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .dropdown-mega h6 {
-            color: var(--teal-primary);
-            margin-bottom: 1rem;
-            position: relative;
-            padding-bottom: 8px;
-            /* Space for the underline */
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
-        /* Colored line below headings */
-        .dropdown-mega h6::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            /* Center the underline */
-            transform: translateX(-50%);
-            /* Adjust for perfect centering */
-            width: 50px;
-            /* Adjust length as needed */
-            height: 3px;
-            background: var(--teal-secondary);
-            border-radius: 2px;
-        }
-
-        /* Fix the parent list items to contain the clickable area */
-        .dropdown-mega .list-unstyled {
-            display: flex;
-            flex-direction: column;
-
-            /* This centers the items horizontally */
-
-            /* This ensures the list only takes up necessary width */
-
-            /* This centers the list on the page */
-            padding: 0;
-            /* Remove default padding */
-        }
-
-        .dropdown-mega .list-unstyled li {
-
-            list-style: none;
-            /* Remove bullet points */
-        }
-
-        /* Style the links themselves */
-        .dropdown-mega .dropdown-item {
-            display: block;
-            padding: 0.5rem 1.2rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: all 0.2s ease-in-out;
-            white-space: nowrap;
-            /* Prevents wrapping if link text is long */
-            width: 100%;
-            /* Ensures the link takes the full width of the li */
-        }
-
-        .dropdown-mega .dropdown-item:hover {
-            color: var(--teal-primary);
-            background-color: transparent;
-        }
-
-        .dropdown-mega .dropdown-item:hover {
-            color: var(--teal-primary);
-            background-color: transparent;
-        }
+        
 
         .hero-section {
             background: linear-gradient(135deg, var(--teal-light) 30%, var(--pink-accent) 110%);
@@ -1335,6 +1347,19 @@
                                                             href="products_html\patches\pvc.html">PVC</a></li>
                                                     <li><a class="dropdown-item"
                                                             href="products_html\patches\woven.html">Woven</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <h6 class="text-uppercase fw-bold">Patches</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="col-6">
+                                                <ul class="list-unstyled ">
                                                     <li><a class="dropdown-item"
                                                             href="products_html\patches\puff3d.html">Puff 3D</a></li>
                                                     <li><a class="dropdown-item"
@@ -1344,6 +1369,8 @@
                                                     <li><a class="dropdown-item"
                                                             href="products_html\patches\sublimation.html">Sublimation</a>
                                                     </li>
+                                                    <li><a class="dropdown-item"
+                                                    href="products_html\keychain\embroidery.html">Keychains</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1361,14 +1388,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-                                        <h6 class="text-uppercase fw-bold text-center">Keychain</h6>
-                                        <ul class="list-unstyled text-center">
-                                            <li><a class="dropdown-item"
-                                                    href="products_html\keychain\embroidery.html">Embroidery</a></li>
-                                            
-                                        </ul>
-                                    </div>
+                                    
 
                                     <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                                         <h6 class="text-uppercase fw-bold text-center">Vectors</h6>
@@ -1452,7 +1472,7 @@
                 <button class="product-tab active fade-up" data-filter="all">All Products</button>
                 <button class="product-tab fade-up " data-filter="patches">Patches</button>
                 <button class="product-tab fade-up " data-filter="digitizing">Digitizing</button>
-                <button class="product-tab fade-up" data-filter="keychains">Keychains</button> 
+                <!-- <button class="product-tab fade-up" data-filter="keychains">Keychains</button>  -->
                 <button class="product-tab fade-up" data-filter="vectors">Vectors</button>
             </div>
 
@@ -1577,6 +1597,23 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
+                    <div class="product-card" data-category="patches all">
+                        <div class="product-img">
+                            <a href="products_html/keychain/embroidery.html"> <img src="images/keychains/0.jpeg"
+                                    alt="Acrylic Keychain" oncontextmenu="return false" draggable="false"></a>
+                            <div class="product-badge">Patches</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Keychains</h3>
+                            <p class="">
+                                Fabric keychains with embroidered designs. Stylish, lightweight, and customizable
+                                for branding or gifts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Digitizing -->
                 <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
@@ -1625,24 +1662,6 @@
                             <p class="">
                                 Large, bold embroidery designs for the back of jackets—great for branding or team
                                 apparel.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Keychains -->
-                <div class="col-lg-3 col-md-4 col-sm-6 fade-up">
-                    <div class="product-card" data-category="keychains all">
-                        <div class="product-img">
-                            <a href="products_html/keychain/embroidery.html"> <img src="images/keychains/0.jpeg"
-                                    alt="Acrylic Keychain" oncontextmenu="return false" draggable="false"></a>
-                            <div class="product-badge">Keychains</div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Embroidery Keychain</h3>
-                            <p class="">
-                                Fabric keychains with embroidered designs. Stylish, lightweight, and customizable
-                                for branding or gifts.
                             </p>
                         </div>
                     </div>
