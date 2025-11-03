@@ -975,16 +975,13 @@
             justify-content: center;
             font-size: 1.2rem;
             z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
+            opacity: 1;
+            visibility: visible;
             transition: all 0.4s;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        .back-to-top.active {
-            opacity: 1;
-            visibility: visible;
-        }
+
         
         .back-to-top:hover {
             background: var(--teal-secondary);

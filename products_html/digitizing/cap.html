@@ -149,8 +149,11 @@
 
     <div id="footer-placeholder"></div>
 
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
+    <a href="https://wa.me/+48578261911" target="_blank" class="back-to-top">
+        <i class="fab fa-whatsapp fs-2" aria-hidden="true"></i>
+        <style>
+        .back-to-top { text-decoration: none !important; }
+        </style>
     </a>
 
 
@@ -216,12 +219,7 @@
             }
 
             // Back to top button
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 500) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
+            
         });
 
 
